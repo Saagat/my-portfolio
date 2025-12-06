@@ -68,6 +68,56 @@ if (contactForm) {
         // 2. Collect Data
         const formData = new FormData(contactForm);
 
+        // 2. Client-side Validation
+        const email = formData.get('email');
+        const phone = formData.get('phone');
+        const countryCode = formData.get('country_code');
+
+        // Email Validation (Basic Format)
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            formStatus.innerText = "Please enter a valid email address.";
+            formStatus.className = "text-xs font-medium mt-2 text-red-600";
+            formStatus.classList.remove('hidden');
+            return;
+        }
+
+        // Phone Validation (Country Specific)
+        let phoneRegex;
+        let phoneHint;
+        switch (countryCode) {
+            case '+91': // India (10 digits, starts 6-9)
+                phoneRegex = /^[6-9]\d{9}$/;
+                phoneHint = "10 digits (6-9xxxxxxxxx)";
+                break;
+            case '+1': // US (10 digits)
+                phoneRegex = /^\d{10}$/;
+                phoneHint = "10 digits";
+                break;
+            case '+44': // UK (10-11 digits)
+                phoneRegex = /^\d{10,11}$/;
+                phoneHint = "10-11 digits";
+                break;
+            case '+971': // UAE (9 digits, usually starts 5)
+                phoneRegex = /^\d{9}$/;
+                phoneHint = "9 digits";
+                break;
+            case '+61': // AU (9 digits, usually starts 4)
+                phoneRegex = /^\d{9}$/;
+                phoneHint = "9 digits";
+                break;
+            default:
+                phoneRegex = /^\d{7,15}$/; // Fallback
+                phoneHint = "valid number";
+        }
+
+        if (phone && !phoneRegex.test(phone.replace(/\D/g, ''))) { // Strip non-digits for check
+            formStatus.innerText = `Invalid phone number for ${countryCode}. Required: ${phoneHint}.`;
+            formStatus.className = "text-xs font-medium mt-2 text-red-600";
+            formStatus.classList.remove('hidden');
+            return;
+        }
+
         // 3. Send via Fetch
         fetch(contactForm.action, {
             method: 'POST',
