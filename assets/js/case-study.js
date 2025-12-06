@@ -10,7 +10,7 @@ const projectsData = {
         timeline: "8 Weeks",
         tools: "Figma, Maze, Jira",
         year: "2024",
-        heroImg: "https://via.placeholder.com/1280x720.png?text=E-commerce+Hero",
+        heroImg: "https://picsum.photos/seed/ux1/1280/720",
         content: `
   <h3>The Challenge</h3>
   <p>The client, a mid-sized fashion retailer, was experiencing a high cart abandonment rate (68%) and low mobile conversion. Users reported that the checkout process was confusing and the product filtering was ineffective.</p>
@@ -27,10 +27,10 @@ const projectsData = {
   <p>Post-launch analytics showed a <strong>27% increase in conversion rate</strong> and a <strong>15% reduction in cart abandonment</strong>. User satisfaction scores (CSAT) improved by 40%.</p>
 `,
         gallery: [
-            "https://via.placeholder.com/600x400.png?text=Wireframes",
-            "https://via.placeholder.com/600x400.png?text=Mobile+UI",
-            "https://via.placeholder.com/600x400.png?text=Style+Guide",
-            "https://via.placeholder.com/600x400.png?text=Final+Screens"
+            "https://picsum.photos/seed/ux1_1/600/400",
+            "https://picsum.photos/seed/ux1_2/600/400",
+            "https://picsum.photos/seed/ux1_3/600/400",
+            "https://picsum.photos/seed/ux1_4/600/400"
         ]
     },
     "project-2": {
@@ -40,7 +40,7 @@ const projectsData = {
         timeline: "3 Weeks",
         tools: "Blender, After Effects",
         year: "2024",
-        heroImg: "https://via.placeholder.com/1280x720.png?text=3D+Hero",
+        heroImg: "https://picsum.photos/seed/render/1280/720",
         content: `
   <h3>The Challenge</h3>
   <p>Launch a new tech gadget with high-impact visuals that stand out in a crowded market. The client needed photorealistic renders and a hype-building teaser video for social media.</p>
@@ -52,10 +52,10 @@ const projectsData = {
   <p>The teaser generated over <strong>50k views</strong> on Instagram in the first week. The hero imagery was used across the landing page and ad campaigns, contributing to a successful pre-order phase.</p>
 `,
         gallery: [
-            "https://via.placeholder.com/600x400.png?text=Render+1",
-            "https://via.placeholder.com/600x400.png?text=Render+2",
-            "https://via.placeholder.com/600x400.png?text=Wireframe",
-            "https://via.placeholder.com/600x400.png?text=Motion+Still"
+            "https://picsum.photos/seed/render_1/600/400",
+            "https://picsum.photos/seed/render_2/600/400",
+            "https://picsum.photos/seed/render_3/600/400",
+            "https://picsum.photos/seed/render_4/600/400"
         ]
     },
     "project-3": {
@@ -65,7 +65,7 @@ const projectsData = {
         timeline: "6 Weeks",
         tools: "Figma, React",
         year: "2024",
-        heroImg: "https://via.placeholder.com/1280x720.png?text=SaaS+Hero",
+        heroImg: "https://picsum.photos/seed/saas/1280/720",
         content: `
   <h3>The Challenge</h3>
   <p>Users of a complex analytics platform were struggling to navigate the data. The existing dashboard was cluttered and lacked hierarchy.</p>
@@ -77,10 +77,10 @@ const projectsData = {
   <p>Support tickets related to "how to find data" dropped by <strong>35%</strong>. The new component library accelerated the dev team's velocity by 2x.</p>
 `,
         gallery: [
-            "https://via.placeholder.com/600x400.png?text=Dashboard+Overview",
-            "https://via.placeholder.com/600x400.png?text=Widget+Library",
-            "https://via.placeholder.com/600x400.png?text=Dark+Mode",
-            "https://via.placeholder.com/600x400.png?text=Mobile+View"
+            "https://picsum.photos/seed/saas_1/600/400",
+            "https://picsum.photos/seed/saas_2/600/400",
+            "https://picsum.photos/seed/saas_3/600/400",
+            "https://picsum.photos/seed/saas_4/600/400"
         ]
     },
     "project-4": {
@@ -90,7 +90,7 @@ const projectsData = {
         timeline: "10 Weeks",
         tools: "Figma, Protopie",
         year: "2024",
-        heroImg: "https://via.placeholder.com/1280x720.png?text=App+Hero",
+        heroImg: "https://picsum.photos/seed/mobile/1280/720",
         content: `
   <h3>The Challenge</h3>
   <p>A fintech app had a high drop-off rate during the KYC (Know Your Customer) onboarding process. Users found it tedious and intrusive.</p>
@@ -102,10 +102,10 @@ const projectsData = {
   <p>Onboarding completion rate increased from 45% to <strong>72%</strong>. User retention after Day 30 improved by 15%.</p>
 `,
         gallery: [
-            "https://via.placeholder.com/600x400.png?text=Onboarding+Flow",
-            "https://via.placeholder.com/600x400.png?text=Home+Screen",
-            "https://via.placeholder.com/600x400.png?text=Profile",
-            "https://via.placeholder.com/600x400.png?text=Interactions"
+            "https://picsum.photos/seed/mobile_1/600/400",
+            "https://picsum.photos/seed/mobile_2/600/400",
+            "https://picsum.photos/seed/mobile_3/600/400",
+            "https://picsum.photos/seed/mobile_4/600/400"
         ]
     },
     "project-5": {
@@ -115,7 +115,7 @@ const projectsData = {
         timeline: "4 Weeks",
         tools: "Webflow, Spline",
         year: "2024",
-        heroImg: "https://via.placeholder.com/1280x720.png?text=Brand+Hero",
+        heroImg: "https://picsum.photos/seed/brand/1280/720",
         content: `
   <h3>The Challenge</h3>
   <p>A boutique agency wanted to rebrand and position themselves as a premium, forward-thinking partner. Their old site was static and dated.</p>
@@ -127,10 +127,10 @@ const projectsData = {
   <p>The agency reported a significant increase in inbound leads from higher-tier clients. The site won a "Site of the Day" award on Awwwards.</p>
 `,
         gallery: [
-            "https://via.placeholder.com/600x400.png?text=Homepage",
-            "https://via.placeholder.com/600x400.png?text=About+Page",
-            "https://via.placeholder.com/600x400.png?text=Menu+Interaction",
-            "https://via.placeholder.com/600x400.png?text=Mobile"
+            "https://picsum.photos/seed/brand_1/600/400",
+            "https://picsum.photos/seed/brand_2/600/400",
+            "https://picsum.photos/seed/brand_3/600/400",
+            "https://picsum.photos/seed/brand_4/600/400"
         ]
     },
     "project-6": {
@@ -140,7 +140,7 @@ const projectsData = {
         timeline: "12 Weeks",
         tools: "Figma, Storybook",
         year: "2025",
-        heroImg: "https://via.placeholder.com/1280x720.png?text=System+Hero",
+        heroImg: "https://picsum.photos/seed/system/1280/720",
         content: `
   <h3>The Challenge</h3>
   <p>A scaling startup had inconsistent UI across their 3 products. Developers were reinventing the wheel for every new feature.</p>
@@ -152,10 +152,10 @@ const projectsData = {
   <p>Development time for new features decreased by <strong>40%</strong>. The design system is now used by 15+ designers and developers.</p>
 `,
         gallery: [
-            "https://via.placeholder.com/600x400.png?text=Component+Library",
-            "https://via.placeholder.com/600x400.png?text=Documentation",
-            "https://via.placeholder.com/600x400.png?text=Tokens",
-            "https://via.placeholder.com/600x400.png?text=Usage+Examples"
+            "https://picsum.photos/seed/system_1/600/400",
+            "https://picsum.photos/seed/system_2/600/400",
+            "https://picsum.photos/seed/system_3/600/400",
+            "https://picsum.photos/seed/system_4/600/400"
         ]
     }
 };
