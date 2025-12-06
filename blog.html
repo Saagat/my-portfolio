@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Blog — Your Name</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+    }
+  </script>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/security.css">
+  <script src="assets/js/security.js"></script>
+</head>
+
+<body class="bg-gray-50 text-gray-900 antialiased dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+  <!-- Particles Canvas -->
+  <canvas id="particles-canvas" class="fixed inset-0 z-30 pointer-events-none"></canvas>
+  <!-- NAV -->
+  <header
+    class="sticky top-0 z-40 bg-white/80 backdrop-blur border-b dark:bg-gray-900/80 dark:border-gray-800 transition-colors duration-300">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="flex h-14 items-center justify-between">
+        <div class="flex items-center gap-2">
+          <span
+            class="h-8 w-8 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs font-semibold">UX</span>
+          <a href="index.html" class="font-semibold text-sm sm:text-base dark:text-white">Sagar Navnath</a>
+        </div>
+
+        <nav class="hidden md:flex items-center gap-6 text-sm text-gray-600 dark:text-gray-300">
+          <a href="index.html#about" class="hover:text-gray-900 dark:hover:text-white">Home</a>
+          <a href="projects.html" class="hover:text-gray-900 dark:hover:text-white">Projects</a>
+          <a href="services.html" class="hover:text-gray-900 dark:hover:text-white">Services</a>
+          <a href="index.html#skills" class="hover:text-gray-900 dark:hover:text-white">Skills</a>
+          <a href="blog.html" class="hover:text-gray-900 dark:hover:text-white font-semibold">Blog</a>
+          <a href="index.html#contact"
+            class="rounded-full border px-3 py-1 text-xs font-medium hover:bg-gray-900 hover:text-white dark:border-gray-700 dark:hover:bg-gray-800 dark:hover:text-white transition-colors">Contact</a>
+          <button id="theme-toggle"
+            class="p-2 rounded-full hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-gray-900 transition-colors"
+            aria-label="Toggle theme">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h1a1 1 0 100 2h-1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </nav>
+
+        <!-- Mobile Toggle (simplified) -->
+        <div class="md:hidden flex items-center">
+          <a href="index.html#contact"
+            class="rounded-full border px-3 py-1 text-xs font-medium dark:border-gray-700 dark:text-gray-300">Hire
+            me</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+    <div
+      class="rounded-xl p-6 border bg-white post-hero dark:bg-gray-800 dark:border-gray-700 transition-colors duration-300">
+      <h1 class="text-2xl font-bold dark:text-white">Blog</h1>
+      <p class="mt-2 text-sm lead dark:text-gray-400">Short practical articles on UX, visual design, design systems and
+        tooling.</p>
+      <div class="mt-4 text-xs toc dark:text-gray-400">
+        <span class="mr-2">Jump to:</span>
+        <a href="#post-ux-principles" class="mr-3 text-emerald-600 dark:text-emerald-400">UX & Visual Design
+          Principles</a>
+        <a href="#post-design-systems" class="mr-3 text-emerald-600 dark:text-emerald-400">Design Systems</a>
+        <a href="#post-figma-tokens" class="text-emerald-600 dark:text-emerald-400">Figma Tokens</a>
+      </div>
+    </div>
+
+    <!-- GRID previews -->
+    <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Preview 1 -->
+      <article
+        class="rounded-xl border bg-white overflow-hidden dark:bg-gray-800 dark:border-gray-700 transition-colors duration-300">
+        <div class="p-4">
+          <p class="text-[11px] text-gray-500 dark:text-gray-400">UX • Principles</p>
+          <h3 class="mt-1 text-lg font-semibold text-gray-900 dark:text-white">UX & Visual Design Principles</h3>
+          <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">Practical rules that improve clarity, hierarchy, and
+            usability — with examples you can use today.</p>
+          <div class="mt-4">
+            <a href="#post-ux-principles"
+              class="text-emerald-600 font-medium hover:underline dark:text-emerald-400">Read →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Preview 2 -->
+      <article
+        class="rounded-xl border bg-white overflow-hidden dark:bg-gray-800 dark:border-gray-700 transition-colors duration-300">
+        <div class="p-4">
+          <p class="text-[11px] text-gray-500 dark:text-gray-400">Product • Ops</p>
+          <h3 class="mt-1 text-lg font-semibold text-gray-900 dark:text-white">Design Systems: When & How to Build</h3>
+          <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">What a design system actually gives you, the right
+            scope, and a checklist for first 3 months.</p>
+          <div class="mt-4">
+            <a href="#post-design-systems"
+              class="text-emerald-600 font-medium hover:underline dark:text-emerald-400">Read →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Preview 3 -->
+      <article
+        class="rounded-xl border bg-white overflow-hidden dark:bg-gray-800 dark:border-gray-700 transition-colors duration-300">
+        <div class="p-4">
+          <p class="text-[11px] text-gray-500 dark:text-gray-400">Tools • Scale</p>
+          <h3 class="mt-1 text-lg font-semibold text-gray-900 dark:text-white">Figma Tokens — Practical Guide</h3>
+          <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">Organize design tokens, naming conventions, and an
+            example token file you can paste into Figma plugins or style libraries.</p>
+          <div class="mt-4">
+            <a href="#post-figma-tokens" class="text-emerald-600 font-medium hover:underline dark:text-emerald-400">Read
+              →</a>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <!-- Full posts (anchors) -->
+    <section id="post-ux-principles"
+      class="mt-12 rounded-xl border bg-white p-8 content-max dark:bg-gray-800 dark:border-gray-700 transition-colors duration-300">
+      <h2 class="text-xl font-bold text-gray-900 dark:text-white">UX & Visual Design Principles</h2>
+      <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">Short, actionable principles that improve product
+        clarity, trust and usability. Apply these immediately:</p>
+
+      <h3 class="mt-4 font-semibold dark:text-gray-200">1. Start with clear intent (the 3-second test)</h3>
+      <p class="mt-1 text-gray-600 dark:text-gray-400">Users should understand the page’s primary purpose within ~3
+        seconds. If they can't, simplify: reduce copy, strengthen headings, and increase visual hierarchy.</p>
+
+      <h3 class="mt-4 font-semibold dark:text-gray-200">2. Use visual hierarchy to guide attention</h3>
+      <p class="mt-1 text-gray-600 dark:text-gray-400">Size, weight, color and spacing direct attention. Bold primary
+        actions, use color sparingly for calls-to-action, and increase spacing around important elements.</p>
+
+      <h3 class="mt-4 font-semibold dark:text-gray-200">3. Favor progressive disclosure</h3>
+      <p class="mt-1 text-gray-600 dark:text-gray-400">Show only what's necessary up front. Reveal details on demand
+        (tooltips, accordions, modals) — reduces cognitive load and improves conversion.</p>
+
+      <h3 class="mt-4 font-semibold dark:text-gray-200">4. Microcopy matters</h3>
+      <p class="mt-1 text-gray-600 dark:text-gray-400">Use concise, benefit-led labels for buttons and inputs. Replace
+        “Submit” with “Request quote” or “Save changes” — clarity beats cleverness.</p>
+
+      <h3 class="mt-4 font-semibold dark:text-gray-200">5. Accessibility is non-negotiable</h3>
+      <p class="mt-1 text-gray-600 dark:text-gray-400">Contrast (WCAG AA), keyboard navigation, and semantic HTML are
+        essentials. Make error states descriptive and actionable.</p>
+
+      <h3 class="mt-4 font-semibold dark:text-gray-200">6. Motion as a hint, not a show</h3>
+      <p class="mt-1 text-gray-600 dark:text-gray-400">Use motion to clarify relationships (e.g., where content moved
+        from) and avoid decorative motion that distracts. Respect reduced-motion preferences.</p>
+
+      <div class="mt-6">
+        <a href="#top" class="text-emerald-600 font-medium hover:underline dark:text-emerald-400">Back to top</a>
+      </div>
+    </section>
+
+    <section id="post-design-systems"
+      class="mt-10 rounded-xl border bg-white p-8 content-max dark:bg-gray-800 dark:border-gray-700 transition-colors duration-300">
+      <h2 class="text-xl font-bold text-gray-900 dark:text-white">Design Systems: When & How to Build</h2>
+      <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">A design system should be built to solve a real pain —
+        like inconsistent UI, slow engineering handoff, or duplicated visual assets. Here’s a minimal plan:</p>
+
+      <h3 class="mt-4 font-semibold dark:text-gray-200">Why build one?</h3>
+      <p class="mt-1 text-gray-600 dark:text-gray-400">Gives consistency, speeds up product delivery, and reduces
+        maintenance overhead. But it's not mandatory for very small single-product teams.</p>
+
+      <h3 class="mt-4 font-semibold dark:text-gray-200">Scope & first 3-month checklist</h3>
+      <ul class="list-disc list-inside mt-2 text-gray-600 dark:text-gray-400">
+        <li><strong>Month 0:</strong> Audit UI components and tokens (colors, type, spacing).</li>
+        <li><strong>Month 1:</strong> Create token file + base components (buttons, inputs, cards) in Figma.</li>
+        <li><strong>Month 2:</strong> Ship a lightweight component library (React/Vue) for the most common components.
+        </li>
+        <li><strong>Month 3:</strong> Add documentation site + usage examples and establish PR/review process for design
+          changes.</li>
+      </ul>
+
+      <h3 class="mt-4 font-semibold dark:text-gray-200">Governance (keep it lean)</h3>
+      <p class="mt-1 text-gray-600 dark:text-gray-400">A small cross-functional group (1 designer, 1 dev, a PM) should
+        own the system. Prefer documented decisions and a lightweight changelog over heavy approval processes.</p>
+
+      <h3 class="mt-4 font-semibold dark:text-gray-200">When not to build</h3>
+      <p class="mt-1 text-gray-600 dark:text-gray-400">If product scope is tiny or the team is <em>very</em>
+        early-stage, start with conventions in Figma and iterate only after you have repeatable patterns to justify
+        engineering work.</p>
+
+      <div class="mt-6">
+        <a href="#top" class="text-emerald-600 font-medium hover:underline dark:text-emerald-400">Back to top</a>
+      </div>
+    </section>
+
+    <section id="post-figma-tokens"
+      class="mt-10 rounded-xl border bg-white p-8 content-max dark:bg-gray-800 dark:border-gray-700 transition-colors duration-300">
+      <h2 class="text-xl font-bold text-gray-900 dark:text-white">Figma Tokens — Practical Guide</h2>
+      <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">Design tokens are named values (colors, spacing, type
+        sizes) that keep design consistent and easily transferrable to code. Here’s how to structure them.</p>
+
+      <h3 class="mt-4 font-semibold dark:text-gray-200">Core token categories</h3>
+      <ul class="list-disc list-inside mt-2 text-gray-600 dark:text-gray-400">
+        <li><strong>Color tokens:</strong> `color.primary.500`, `color.neutral.100`, `color.error.400`</li>
+        <li><strong>Type tokens:</strong> `type.h1.size`, `type.body.lineHeight`</li>
+        <li><strong>Spacing tokens:</strong> `space.1`, `space.2`, `space.8`</li>
+        <li><strong>Radius / shadow tokens:</strong> `radius.sm`, `shadow.level-1`</li>
+      </ul>
+
+      <h3 class="mt-4 font-semibold dark:text-gray-200">A small example token JSON (copy/paste)</h3>
+      <pre class="mt-2 p-3 bg-gray-100 rounded text-xs overflow-auto dark:bg-gray-900 dark:text-gray-300">
+{
+  "color": {
+    "primary": { "50":"#ecfdf5","500":"#10b981","700":"#047857" },
+    "neutral": { "50":"#f9fafb","500":"#6b7280","800":"#1f2937" },
+    "error": { "500":"#ef4444" }
+  },
+  "type": {
+    "h1": { "size":"32px","lineHeight":"40px" },
+    "body": { "size":"16px","lineHeight":"24px" }
+  },
+  "space": { "1":"4px","2":"8px","3":"12px","4":"16px","8":"32px" },
+  "radius": { "sm":"6px","md":"10px" }
+}
+        </pre>
+      <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">Use this as a starting point for Figma tokens plugins or
+        to export into your frontend token system.</p>
+
+      <h3 class="mt-4 font-semibold dark:text-gray-200">Naming & versioning</h3>
+      <p class="mt-1 text-gray-600 dark:text-gray-400">Prefer semantic names (primary / success / error) over ad-hoc
+        color names. Keep tokens in a versioned source (Git) and publish releases when tokens change in breaking ways.
+      </p>
+
+      <div class="mt-6">
+        <a href="#top" class="text-emerald-600 font-medium hover:underline dark:text-emerald-400">Back to top</a>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <div
+      class="mt-12 rounded-xl border bg-white p-6 dark:bg-gray-800 dark:border-gray-700 transition-colors duration-300">
+      <h3 class="text-base font-semibold text-gray-900 dark:text-white">Want deeper articles or case studies?</h3>
+      <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">I can expand any of these into full, illustrated articles
+        or step-by-step guides. <a href="index.html#contact"
+          class="text-emerald-600 font-medium hover:underline dark:text-emerald-400">Drop a note →</a></p>
+    </div>
+  </main>
+
+  <footer class="bg-white border-t dark:bg-gray-900 dark:border-gray-800 transition-colors duration-300">
+    <div
+      class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-6 text-xs text-gray-500 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+      <div>© 2025 Your Name — UX / UI &amp; Visual Design</div>
+      <div class="flex flex-wrap gap-3">
+        <a href="index.html#about" class="hover:text-gray-800 dark:hover:text-gray-300">About</a>
+        <a href="projects.html" class="hover:text-gray-800 dark:hover:text-gray-300">Projects</a>
+        <a href="index.html#contact" class="hover:text-gray-800 dark:hover:text-gray-300">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/particles.js"></script>
+</body>
+
+</html>

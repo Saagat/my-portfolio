@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Services — Your Name</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+    }
+  </script>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/security.css">
+  <script src="assets/js/security.js"></script>
+
+</head>
+
+<body class="bg-gray-50 text-gray-900 antialiased dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+  <!-- Particles Canvas -->
+  <canvas id="particles-canvas" class="fixed inset-0 z-30 pointer-events-none"></canvas>
+  <header
+    class="sticky top-0 z-40 bg-white/80 backdrop-blur border-b dark:bg-gray-900/80 dark:border-gray-800 transition-colors duration-300">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="flex h-14 items-center justify-between">
+        <div class="flex items-center gap-2">
+          <span
+            class="h-8 w-8 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs font-semibold">UX</span>
+          <a href="index.html" class="font-semibold text-sm sm:text-base dark:text-white">Sagar Navnath</a>
+        </div>
+
+        <nav class="hidden md:flex items-center gap-6 text-sm text-gray-600 dark:text-gray-300">
+          <a href="index.html#about" class="hover:text-gray-900 dark:hover:text-white">Home</a>
+          <a href="projects.html" class="hover:text-gray-900 dark:hover:text-white">Projects</a>
+          <a href="services.html" class="hover:text-gray-900 dark:hover:text-white font-semibold">Services</a>
+          <a href="index.html#skills" class="hover:text-gray-900 dark:hover:text-white">Skills</a>
+          <a href="index.html#blog" class="hover:text-gray-900 dark:hover:text-white">Blog</a>
+          <a href="index.html#contact"
+            class="rounded-full border px-3 py-1 text-xs font-medium hover:bg-gray-900 hover:text-white dark:border-gray-700 dark:hover:bg-gray-800 dark:hover:text-white transition-colors">Contact</a>
+          <button id="theme-toggle"
+            class="p-2 rounded-full hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-gray-900 transition-colors"
+            aria-label="Toggle theme">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h1a1 1 0 100 2h-1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </nav>
+
+        <!-- Mobile Toggle (simplified) -->
+        <div class="md:hidden flex items-center">
+          <a href="index.html#contact"
+            class="rounded-full border px-3 py-1 text-xs font-medium dark:border-gray-700 dark:text-gray-300">Hire
+            me</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="bg-white dark:bg-gray-800">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+      <div class="text-center max-w-3xl mx-auto">
+        <p class="text-xs uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400">
+          Services & Expertise
+        </p>
+        <h1 class="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-gray-800 dark:text-gray-100">
+          Full-Stack Design &<br />
+          <span class="text-emerald-600 dark:text-emerald-400">Marketing Solutions</span>
+        </h1>
+        <p class="mt-4 text-sm sm:text-base text-gray-600 dark:text-gray-300">
+          From UX/UI design to performance marketing, I offer comprehensive digital services
+          to help your product succeed in the market.
+        </p>
+        <div class="mt-6 flex flex-wrap justify-center gap-3">
+          <span
+            class="inline-flex items-center rounded-full bg-emerald-100 px-3 py-1 text-xs font-medium text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300 neon-green">
+            <span class="mr-1.5 h-2 w-2 rounded-full bg-emerald-500"></span>
+            Available for Full-time
+          </span>
+          <span
+            class="inline-flex items-center rounded-full bg-blue-100 px-3 py-1 text-xs font-medium text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 neon-blue">
+            <span class="mr-1.5 h-2 w-2 rounded-full bg-blue-500"></span>
+            Freelancer: Ready to work with you
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+    <div class="rounded-xl p-6 border bg-white dark:bg-gray-800 dark:border-gray-700 transition-colors duration-300">
+      <h1 class="text-2xl font-bold text-gray-900 dark:text-white">Services</h1>
+      <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">Packages and typical scopes I deliver for product teams
+        and startups.</p>
+
+      <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div
+          class="rounded-xl border p-5 bg-gray-50 dark:bg-gray-900 dark:border-gray-700 transition-colors duration-300">
+          <h3 class="font-semibold text-gray-900 dark:text-white">Product UX Sprint</h3>
+          <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">2-week design sprint to validate ideas, prototype and
+            test with users.</p>
+          <ul class="mt-3 text-xs text-gray-600 dark:text-gray-400 list-disc list-inside space-y-1">
+            <li>Research + prioritization</li>
+            <li>Prototype + usability testing</li>
+            <li>Deliverables: Figma files, roadmap</li>
+          </ul>
+          <div class="mt-4">
+            <a href="index.html#contact"
+              class="rounded-full border px-3 py-1 text-xs font-medium hover:bg-gray-900 hover:text-white dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white transition-colors">Request
+              Sprint →</a>
+          </div>
+        </div>
+
+        <div
+          class="rounded-xl border p-5 bg-gray-50 dark:bg-gray-900 dark:border-gray-700 transition-colors duration-300">
+          <h3 class="font-semibold text-gray-900 dark:text-white">Design System & Components</h3>
+          <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">Build reusable component libraries and document
+            patterns for scale.</p>
+          <ul class="mt-3 text-xs text-gray-600 dark:text-gray-400 list-disc list-inside space-y-1">
+            <li>Figma library + tokens</li>
+            <li>Accessible components</li>
+            <li>Handoff-ready CSS / tokens</li>
+          </ul>
+          <div class="mt-4">
+            <a href="index.html#contact"
+              class="rounded-full border px-3 py-1 text-xs font-medium hover:bg-gray-900 hover:text-white dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white transition-colors">Request
+              System →</a>
+          </div>
+        </div>
+
+        <div
+          class="rounded-xl border p-5 bg-gray-50 dark:bg-gray-900 dark:border-gray-700 transition-colors duration-300">
+          <h3 class="font-semibold text-gray-900 dark:text-white">3D Hero Scenes & Motion</h3>
+          <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">High-fidelity 3D renders and motion teasers for
+            landing pages and promos.</p>
+          <ul class="mt-3 text-xs text-gray-600 dark:text-gray-400 list-disc list-inside space-y-1">
+            <li>Modeling, lighting, materials</li>
+            <li>Short motion teaser (10–30s)</li>
+            <li>Web-optimized hero assets</li>
+          </ul>
+          <div class="mt-4">
+            <a href="index.html#contact"
+              class="rounded-full border px-3 py-1 text-xs font-medium hover:bg-gray-900 hover:text-white dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white transition-colors">Request
+              3D →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-8 border-t pt-6 dark:border-gray-700">
+        <h4 class="text-sm font-semibold text-gray-800 dark:text-white">Custom scopes</h4>
+        <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">If your project is unique, tell me about budget &
+          timeline and I’ll propose a scope.</p>
+        <a href="index.html#contact"
+          class="mt-4 inline-block rounded-full bg-emerald-500 text-white px-4 py-2 text-xs font-medium hover:bg-emerald-600">Get
+          a proposal</a>
+      </div>
+    </div>
+  </main>
+
+
+
+  <!-- SERVICES GRID -->
+  <section class="bg-gray-50 dark:bg-gray-900 border-t dark:border-gray-700">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+      <!-- SERVICE 1: UX/UI Design & Development -->
+      <div class="mb-12">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="h-14 w-14 rounded-full bg-emerald-500/10 dark:bg-emerald-500/20 flex items-center justify-center">
+            <svg class="w-7 h-7 text-emerald-600 dark:text-emerald-400" fill="none" stroke="currentColor"
+              viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01">
+              </path>
+            </svg>
+          </div>
+          <div>
+            <h2 class="text-xl font-bold text-gray-900 dark:text-white">UX/UI Design & Web Development</h2>
+            <p class="text-sm text-gray-500 dark:text-gray-400">Creating beautiful, functional digital
+              experiences</p>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="rounded-xl border dark:border-gray-700 bg-white dark:bg-gray-800 p-5">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">UX/UI Design</h3>
+            <p class="text-xs text-gray-600 dark:text-gray-300 mb-3">
+              User research, wireframing, prototyping, and high-fidelity UI design for web and mobile
+              applications.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-[10px] bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">Figma</span>
+              <span class="text-[10px] bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">Adobe XD</span>
+              <span class="text-[10px] bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">Sketch</span>
+            </div>
+          </div>
+          <div class="rounded-xl border dark:border-gray-700 bg-white dark:bg-gray-800 p-5">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Web Development</h3>
+            <p class="text-xs text-gray-600 dark:text-gray-300 mb-3">
+              Responsive websites and web applications built with modern frameworks and best practices.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-[10px] bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">HTML/CSS</span>
+              <span class="text-[10px] bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">JavaScript</span>
+              <span class="text-[10px] bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">React</span>
+            </div>
+          </div>
+          <div class="rounded-xl border dark:border-gray-700 bg-white dark:bg-gray-800 p-5">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Visual Design</h3>
+            <p class="text-xs text-gray-600 dark:text-gray-300 mb-3">
+              Brand identity, graphics, illustrations, and visual assets for digital and print media.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-[10px] bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">Illustrator</span>
+              <span class="text-[10px] bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">Photoshop</span>
+              <span class="text-[10px] bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">InDesign</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SERVICE 2: Digital Marketing -->
+      <div class="mb-12">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="h-14 w-14 rounded-full bg-emerald-500/10 dark:bg-emerald-500/20 flex items-center justify-center">
+            <svg class="w-7 h-7 text-emerald-600 dark:text-emerald-400" fill="none" stroke="currentColor"
+              viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6">
+              </path>
+            </svg>
+          </div>
+          <div>
+            <h2 class="text-xl font-bold text-gray-900 dark:text-white">Digital Marketing</h2>
+            <p class="text-sm text-gray-500 dark:text-gray-400">Data-driven marketing strategies that
+              deliver results</p>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="rounded-xl border dark:border-gray-700 bg-white dark:bg-gray-800 p-5">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Social Media Marketing</h3>
+            <p class="text-xs text-gray-600 dark:text-gray-300 mb-3">
+              Content strategy, community management, and organic growth across all major social
+              platforms.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-[10px] bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">Instagram</span>
+              <span class="text-[10px] bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">Facebook</span>
+              <span class="text-[10px] bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">LinkedIn</span>
+            </div>
+          </div>
+          <div class="rounded-xl border dark:border-gray-700 bg-white dark:bg-gray-800 p-5">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Performance Marketing</h3>
+            <p class="text-xs text-gray-600 dark:text-gray-300 mb-3">
+              Paid advertising campaigns optimized for conversions, ROI tracking, and continuous
+              improvement.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-[10px] bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">Google Ads</span>
+              <span class="text-[10px] bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">Facebook Ads</span>
+              <span class="text-[10px] bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">Analytics</span>
+            </div>
+          </div>
+          <div class="rounded-xl border dark:border-gray-700 bg-white dark:bg-gray-800 p-5">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Social Media Campaigns</h3>
+            <p class="text-xs text-gray-600 dark:text-gray-300 mb-3">
+              End-to-end campaign planning, creative development, and execution for product launches and
+              promotions.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-[10px] bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">Strategy</span>
+              <span class="text-[10px] bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">Content</span>
+              <span class="text-[10px] bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">Analytics</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SERVICE 3: 3D & Motion -->
+      <div class="mb-12">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="h-14 w-14 rounded-full bg-emerald-500/10 dark:bg-emerald-500/20 flex items-center justify-center">
+            <svg class="w-7 h-7 text-emerald-600 dark:text-emerald-400" fill="none" stroke="currentColor"
+              viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z">
+              </path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+              </path>
+            </svg>
+          </div>
+          <div>
+            <h2 class="text-xl font-bold text-gray-900 dark:text-white">3D & Motion Graphics</h2>
+            <p class="text-sm text-gray-500 dark:text-gray-400">Bringing ideas to life with stunning visuals
+            </p>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="rounded-xl border dark:border-gray-700 bg-white dark:bg-gray-800 p-5">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">3D Modeling</h3>
+            <p class="text-xs text-gray-600 dark:text-gray-300 mb-3">
+              Product visualization, architectural renders, and 3D assets for web and marketing materials.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-[10px] bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">Blender</span>
+              <span class="text-[10px] bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">Cinema 4D</span>
+              <span class="text-[10px] bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">3ds Max</span>
+            </div>
+          </div>
+          <div class="rounded-xl border dark:border-gray-700 bg-white dark:bg-gray-800 p-5">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Motion Graphics</h3>
+            <p class="text-xs text-gray-600 dark:text-gray-300 mb-3">
+              Animated logos, explainer videos, UI animations, and engaging motion content for social
+              media.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-[10px] bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">After
+                Effects</span>
+              <span class="text-[10px] bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">Premiere Pro</span>
+              <span class="text-[10px] bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">Lottie</span>
+            </div>
+          </div>
+          <div class="rounded-xl border dark:border-gray-700 bg-white dark:bg-gray-800 p-5">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Video Production</h3>
+            <p class="text-xs text-gray-600 dark:text-gray-300 mb-3">
+              Product demos, promotional videos, and social media content that captures attention and
+              drives engagement.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-[10px] bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">Editing</span>
+              <span class="text-[10px] bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">Color
+                Grading</span>
+              <span class="text-[10px] bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">Sound Design</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SERVICE 4: Web Development -->
+      <div class="mb-12">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="h-14 w-14 rounded-full bg-emerald-500/10 dark:bg-emerald-500/20 flex items-center justify-center">
+            <svg class="w-7 h-7 text-emerald-600 dark:text-emerald-400" fill="none" stroke="currentColor"
+              viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4">
+              </path>
+            </svg>
+          </div>
+          <div>
+            <h2 class="text-xl font-bold text-gray-900 dark:text-white">Web Development</h2>
+            <p class="text-sm text-gray-500 dark:text-gray-400">Robust, scalable, and high-performance web solutions
+            </p>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="rounded-xl border dark:border-gray-700 bg-white dark:bg-gray-800 p-5">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Frontend Development</h3>
+            <p class="text-xs text-gray-600 dark:text-gray-300 mb-3">
+              Pixel-perfect implementation of designs using modern frameworks for responsive and interactive interfaces.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-[10px] bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">React.js</span>
+              <span class="text-[10px] bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">Vue.js</span>
+              <span class="text-[10px] bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">Tailwind CSS</span>
+            </div>
+          </div>
+          <div class="rounded-xl border dark:border-gray-700 bg-white dark:bg-gray-800 p-5">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Backend Development</h3>
+            <p class="text-xs text-gray-600 dark:text-gray-300 mb-3">
+              Secure and scalable server-side logic, API development, and database management.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-[10px] bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">Node.js</span>
+              <span class="text-[10px] bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">Python</span>
+              <span class="text-[10px] bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">PostgreSQL</span>
+            </div>
+          </div>
+          <div class="rounded-xl border dark:border-gray-700 bg-white dark:bg-gray-800 p-5">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">CMS & E-commerce</h3>
+            <p class="text-xs text-gray-600 dark:text-gray-300 mb-3">
+              Custom themes and plugins for content management systems and online stores.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-[10px] bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">WordPress</span>
+              <span class="text-[10px] bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">Shopify</span>
+              <span class="text-[10px] bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">Webflow</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="bg-white dark:bg-gray-800 border-t dark:border-gray-700">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+      <div class="text-center max-w-2xl mx-auto">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Ready to Start Your Project?</h2>
+        <p class="mt-3 text-sm text-gray-600 dark:text-gray-300">
+          Let's discuss how I can help bring your vision to life with professional design and marketing
+          services.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3 justify-center">
+          <a href="Index.html#contact"
+            class="rounded-full bg-gray-900 dark:bg-emerald-600 text-white text-xs sm:text-sm px-6 py-3 font-medium hover:bg-gray-800 dark:hover:bg-emerald-700">
+            Get in Touch
+          </a>
+          <a href="projects.html"
+            class="rounded-full border dark:border-gray-600 text-xs sm:text-sm px-6 py-3 font-medium hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-gray-900">
+            View My Work
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-white border-t dark:bg-gray-900 dark:border-gray-800 transition-colors duration-300">
+    <div
+      class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-6 text-xs text-gray-500 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+      <div>© 2025 Your Name — UX / UI &amp; Visual Design</div>
+      <div class="flex flex-wrap gap-3">
+        <a href="index.html#about" class="hover:text-gray-800 dark:hover:text-gray-300">About</a>
+        <a href="projects.html" class="hover:text-gray-800 dark:hover:text-gray-300">Projects</a>
+        <a href="index.html#contact" class="hover:text-gray-800 dark:hover:text-gray-300">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/particles.js"></script>
+</body>
+
+</html>

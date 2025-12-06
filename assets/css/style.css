@@ -1,0 +1,372 @@
+@charset "UTF-8";
+
+/* =========================================
+   Global Styles & Animations
+   ========================================= */
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* Subtle floating animation for cards */
+@keyframes floatY {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Card base tweaks */
+.project-card {
+    transition: transform .32s cubic-bezier(.2, .9, .2, 1), box-shadow .28s ease, filter .28s ease;
+    transform-origin: center;
+    will-change: transform, box-shadow, filter;
+    backface-visibility: hidden;
+}
+
+/* Soft Apple-style glow on hover */
+.project-card:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow:
+        0 10px 30px rgba(2, 6, 23, 0.10),
+        0 2px 10px rgba(16, 185, 129, 0.08);
+    /* subtle emerald glow */
+    filter: saturate(1.02) drop-shadow(0 6px 18px rgba(16, 185, 129, 0.06));
+}
+
+/* Thumbnail micro animation */
+.project-thumb {
+    transition: transform .6s cubic-bezier(.2, .9, .2, 1);
+    will-change: transform;
+}
+
+.project-card:hover .project-thumb {
+    transform: scale(1.06) translateY(-4px) rotate(-0.6deg);
+}
+
+/* Staggered float for subtle life */
+.float-anim {
+    animation: floatY 6s ease-in-out infinite;
+}
+
+.float-anim.delay-1 {
+    animation-delay: 0.12s;
+}
+
+.float-anim.delay-2 {
+    animation-delay: 0.28s;
+}
+
+.float-anim.delay-3 {
+    animation-delay: 0.44s;
+}
+
+.float-anim.delay-4 {
+    animation-delay: 0.6s;
+}
+
+.float-anim.delay-5 {
+    animation-delay: 0.76s;
+}
+
+.float-anim.delay-6 {
+    animation-delay: 0.92s;
+}
+
+/* micro-interaction for the CTA button */
+.case-cta {
+    transition: background-color .18s ease, color .18s ease, transform .18s ease;
+}
+
+.case-cta:hover {
+    transform: translateY(-2px);
+}
+
+/* respect reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+    .float-anim {
+        animation: none;
+    }
+
+    .project-thumb,
+    .project-card {
+        transition: none;
+        transform: none !important;
+    }
+}
+
+/* =========================================
+   Background & Effects
+   ========================================= */
+
+/* ---------- Animated background container (behind site) ---------- */
+#bg {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    /* behind everything */
+    pointer-events: none;
+    /* let clicks pass through */
+    overflow: hidden;
+}
+
+/* animated gradient */
+.animated-gradient {
+    position: absolute;
+    inset: -20%;
+    background: linear-gradient(120deg, #0f172a, #052f2f 25%, #064e3b 50%, #064e8b 75%, #0f172a);
+    background-size: 400% 400%;
+    filter: blur(36px) saturate(110%);
+    opacity: 0.9;
+    transform: scale(1.02);
+    animation: gradientShift 18s ease-in-out infinite;
+    mix-blend-mode: overlay;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* subtle grain overlay for texture */
+.grain {
+    position: absolute;
+    inset: 0;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><filter id="noise"><feTurbulence baseFrequency="0.8" numOctaves="2" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noise)"/></svg>');
+    opacity: 0.02;
+    mix-blend-mode: soft-light;
+}
+
+/* bird container sits above gradient */
+#birds {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* each bird uses the SVG defined below */
+.bird {
+    position: absolute;
+    width: 86px;
+    /* base width, scaled by JS */
+    height: 54px;
+    transform-origin: center;
+    will-change: transform, opacity;
+    filter: drop-shadow(0 8px 18px rgba(2, 6, 23, 0.28));
+    opacity: 0.95;
+}
+
+/* wing-flap animation (used by a child group) */
+@keyframes flap {
+    0% {
+        transform: scaleY(1);
+    }
+
+    50% {
+        transform: scaleY(0.86);
+    }
+
+    100% {
+        transform: scaleY(1);
+    }
+}
+
+.wing {
+    transform-origin: center;
+    animation: flap 700ms ease-in-out infinite;
+}
+
+/* ensure main site content sits above the background */
+main,
+header,
+section,
+footer {
+    position: relative;
+    z-index: 10;
+}
+
+/* reduce motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .animated-gradient {
+        animation: none;
+    }
+
+    .wing {
+        animation: none;
+    }
+}
+
+/* =========================================
+   Modal Styles
+   ========================================= */
+
+#project-modal {
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#project-modal.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+#project-modal:not(.hidden) {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.modal-content {
+    transform: scale(0.95);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#project-modal:not(.hidden) .modal-content {
+    transform: scale(1);
+}
+
+/* =========================================
+   Neon Pulse
+   ========================================= */
+
+@keyframes neonPulseBlue {
+    0% {
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 6px rgba(59, 130, 246, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+    }
+}
+
+.neon-blue {
+    animation: neonPulseBlue 2s infinite;
+}
+
+/* =========================================
+   Projects Page Specific (Marquee & Galaxy)
+   ========================================= */
+
+/* Marquee Animation */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.marquee-track {
+    display: flex;
+    width: max-content;
+    animation: scroll 30s linear infinite;
+}
+
+/* Galaxy Background Effect */
+.galaxy-bg {
+    background-color: #000;
+    background-image:
+        radial-gradient(1px 1px at 5% 10%, rgba(255, 255, 255, 0.9) 100%, transparent),
+        radial-gradient(1px 1px at 15% 25%, rgba(100, 149, 237, 0.8) 100%, transparent),
+        radial-gradient(2px 2px at 25% 5%, rgba(255, 255, 255, 1) 100%, transparent),
+        radial-gradient(1px 1px at 30% 35%, rgba(147, 112, 219, 0.7) 100%, transparent),
+        radial-gradient(1px 1px at 45% 20%, rgba(255, 255, 255, 0.8) 100%, transparent),
+        radial-gradient(2px 2px at 55% 45%, rgba(100, 149, 237, 0.9) 100%, transparent),
+        radial-gradient(1px 1px at 65% 15%, rgba(255, 255, 255, 0.6) 100%, transparent),
+        radial-gradient(1px 1px at 75% 30%, rgba(147, 112, 219, 0.8) 100%, transparent),
+        radial-gradient(2px 2px at 85% 10%, rgba(255, 255, 255, 0.9) 100%, transparent),
+        radial-gradient(1px 1px at 95% 40%, rgba(100, 149, 237, 0.7) 100%, transparent),
+        radial-gradient(1px 1px at 10% 60%, rgba(255, 255, 255, 0.8) 100%, transparent),
+        radial-gradient(2px 2px at 20% 80%, rgba(147, 112, 219, 0.9) 100%, transparent),
+        radial-gradient(1px 1px at 35% 70%, rgba(100, 149, 237, 0.8) 100%, transparent),
+        radial-gradient(1px 1px at 50% 90%, rgba(255, 255, 255, 0.7) 100%, transparent),
+        radial-gradient(2px 2px at 60% 65%, rgba(255, 255, 255, 0.9) 100%, transparent),
+        radial-gradient(1px 1px at 70% 85%, rgba(147, 112, 219, 0.7) 100%, transparent),
+        radial-gradient(1px 1px at 80% 55%, rgba(100, 149, 237, 0.8) 100%, transparent),
+        radial-gradient(2px 2px at 90% 75%, rgba(255, 255, 255, 0.8) 100%, transparent);
+    background-size: 500px 500px;
+    animation: galaxyMove 120s linear infinite;
+}
+
+@keyframes galaxyMove {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 1000px 1000px;
+    }
+}
+
+/* =========================================
+   Neon Green Pulse
+   ========================================= */
+
+@keyframes neonPulseGreen {
+    0% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 6px rgba(16, 185, 129, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+    }
+}
+
+.neon-green {
+    animation: neonPulseGreen 2s infinite;
+}
+
+/* =========================================
+   Blog Styles
+   ========================================= */
+.lead {
+    color: #475569;
+}
+
+.post-hero {
+    background: linear-gradient(180deg, rgba(6, 40, 30, 0.02), rgba(255, 255, 255, 0));
+}
+
+.content-max {
+    max-width: 760px;
+}
+
+.toc a {
+    text-decoration: underline;
+}
+
+/* Dark mode overrides */
+.dark .lead {
+    color: #9ca3af;
+}
+
+.dark .post-hero {
+    background: linear-gradient(180deg, rgba(6, 40, 30, 0.1), rgba(17, 24, 39, 0));
+}

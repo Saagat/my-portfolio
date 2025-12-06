@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="en" class="">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Projects — Your Name</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/security.css">
+  <script src="assets/js/security.js"></script>
+</head>
+
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 antialiased transition-colors duration-300">
+  <!-- Particles Canvas -->
+  <canvas id="particles-canvas" class="fixed inset-0 z-30 pointer-events-none"></canvas>
+
+  <header
+    class="sticky top-0 z-40 bg-white/80 dark:bg-gray-900/80 backdrop-blur border-b dark:border-gray-800 transition-colors duration-300">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="flex h-14 items-center justify-between">
+        <div class="flex items-center gap-2">
+          <span
+            class="h-8 w-8 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs font-semibold">UX</span>
+          <a href="index.html" class="font-semibold text-sm sm:text-base dark:text-white">Inkbyte Studios</a>
+        </div>
+
+        <nav class="hidden md:flex items-center gap-6 text-sm text-gray-600 dark:text-gray-300">
+          <a href="index.html#about" class="hover:text-gray-900 dark:hover:text-white">Home</a>
+          <a href="projects.html" class="hover:text-gray-900 dark:hover:text-white font-semibold">Projects</a>
+          <a href="services.html" class="hover:text-gray-900 dark:hover:text-white">Services</a>
+          <a href="index.html#skills" class="hover:text-gray-900 dark:hover:text-white">Skills</a>
+          <a href="index.html#blog" class="hover:text-gray-900 dark:hover:text-white">Blog</a>
+          <a href="index.html#contact"
+            class="rounded-full border dark:border-gray-600 px-3 py-1 text-xs font-medium hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-gray-900">Contact</a>
+
+          <!-- Dark Mode Toggle -->
+          <button id="theme-toggle"
+            class="p-2 rounded-full hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-gray-900 transition-colors"
+            aria-label="Toggle theme">
+            <svg id="theme-toggle-dark-icon" class="hidden w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <path
+                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </nav>
+
+        <!-- Mobile Toggle -->
+        <div class="md:hidden flex items-center gap-2">
+          <button id="theme-toggle-mobile"
+            class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+            aria-label="Toggle theme">
+            <svg id="theme-toggle-dark-icon-mobile" class="hidden w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon-mobile" class="hidden w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <path
+                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+    <div class="project-hero rounded-xl p-6 mb-8 border bg-white dark:bg-gray-800 dark:border-gray-700">
+      <h1 class="text-2xl font-bold text-gray-900 dark:text-white">Projects</h1>
+      <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">A curated list of case studies — UX, 3D, motion and
+        product design. Click any case to open details.</p>
+    </div>
+
+    <!-- Projects Filter -->
+    <div class="flex flex-wrap gap-2 mb-8 justify-center">
+      <button
+        class="filter-btn px-4 py-2 rounded-full text-sm font-medium transition-colors bg-gray-900 text-white dark:bg-white dark:text-gray-900"
+        data-filter="all">All</button>
+      <button
+        class="filter-btn px-4 py-2 rounded-full text-sm font-medium transition-colors bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
+        data-filter="ux">UX</button>
+      <button
+        class="filter-btn px-4 py-2 rounded-full text-sm font-medium transition-colors bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
+        data-filter="ui">UI</button>
+      <button
+        class="filter-btn px-4 py-2 rounded-full text-sm font-medium transition-colors bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
+        data-filter="visual design">Visual Design</button>
+      <button
+        class="filter-btn px-4 py-2 rounded-full text-sm font-medium transition-colors bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
+        data-filter="motion and video">Motion and Video</button>
+      <button
+        class="filter-btn px-4 py-2 rounded-full text-sm font-medium transition-colors bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
+        data-filter="social media">Social Media</button>
+      <button
+        class="filter-btn px-4 py-2 rounded-full text-sm font-medium transition-colors bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
+        data-filter="printing">Printing</button>
+    </div>
+
+    <!-- Projects Grid -->
+    <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- Project 1 -->
+      <a href="case-study.html?id=project-1"
+        class="block rounded-xl overflow-hidden border bg-white dark:bg-gray-800 dark:border-gray-700 project-card float-anim delay-1 hover:no-underline group"
+        data-category="ux, ui">
+        <article class="h-full">
+          <div class="p-6">
+            <div class="flex items-start gap-4">
+              <div class="w-20 h-12 rounded-md overflow-hidden flex-shrink-0 bg-gray-100">
+                <img src="https://via.placeholder.com/320x180.png?text=E-commerce" alt="E-commerce thumbnail"
+                  class="h-full w-full object-cover project-thumb" />
+              </div>
+              <div>
+                <h3
+                  class="text-lg font-semibold text-gray-900 dark:text-white group-hover:text-emerald-600 transition-colors">
+                  E-commerce UX &amp; Product UI</h3>
+                <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">UX, research, prototyping — redesign for
+                  product
+                  pages and checkout flows.</p>
+              </div>
+            </div>
+            <div class="mt-4 text-sm text-gray-600 dark:text-gray-300">
+              <p><strong>Challenge:</strong> Improve conversion and reduce drop-off during checkout.</p>
+              <p class="mt-2"><strong>Approach:</strong> Research, flows, hi-fi UI, prototype, usability testing.</p>
+              <div class="mt-4 flex items-center gap-3">
+                <span
+                  class="rounded-full border dark:border-gray-600 px-3 py-1 text-xs font-medium case-cta group-hover:bg-gray-900 group-hover:text-white dark:group-hover:bg-white dark:group-hover:text-gray-900 transition-colors">Read
+                  case study</span>
+                <span class="text-xs text-gray-400">2024</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </a>
+
+      <!-- Project 2 -->
+      <a href="case-study.html?id=project-2"
+        class="block rounded-xl overflow-hidden border bg-white dark:bg-gray-800 dark:border-gray-700 project-card float-anim delay-2 hover:no-underline group"
+        data-category="motion and video, visual design">
+        <article class="h-full">
+          <div class="p-6">
+            <div class="flex items-start gap-4">
+              <div class="w-20 h-12 rounded-md overflow-hidden flex-shrink-0 bg-gray-100">
+                <img src="https://via.placeholder.com/320x180.png?text=3D+Teaser" alt="3D teaser thumbnail"
+                  class="h-full w-full object-cover project-thumb" />
+              </div>
+              <div>
+                <h3
+                  class="text-lg font-semibold text-gray-900 dark:text-white group-hover:text-emerald-600 transition-colors">
+                  3D Product Visual &amp; Motion Teaser</h3>
+                <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">High-quality 3D renders and motion teaser for a
+                  new product launch.</p>
+              </div>
+            </div>
+            <div class="mt-4 text-sm text-gray-600 dark:text-gray-300">
+              <p><strong>Role:</strong> 3D art direction, modeling, materials, animation.</p>
+              <p class="mt-2"><strong>Result:</strong> Hero imagery and a 20s teaser used on landing pages and socials.
+              </p>
+              <div class="mt-4 flex items-center gap-3">
+                <span
+                  class="rounded-full border dark:border-gray-600 px-3 py-1 text-xs font-medium case-cta group-hover:bg-gray-900 group-hover:text-white dark:group-hover:bg-white dark:group-hover:text-gray-900 transition-colors">Read
+                  case study</span>
+                <span class="text-xs text-gray-400">2024</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </a>
+
+      <!-- Project 3 -->
+      <a href="case-study.html?id=project-3"
+        class="block rounded-xl overflow-hidden border bg-white dark:bg-gray-800 dark:border-gray-700 project-card float-anim delay-3 hover:no-underline group"
+        data-category="ux, ui">
+        <article class="h-full">
+          <div class="p-6">
+            <div class="flex items-start gap-4">
+              <div class="w-20 h-12 rounded-md overflow-hidden flex-shrink-0 bg-gray-100">
+                <img src="https://via.placeholder.com/320x180.png?text=SaaS+Dashboard" alt="SaaS thumbnail"
+                  class="h-full w-full object-cover project-thumb" />
+              </div>
+              <div>
+                <h3
+                  class="text-lg font-semibold text-gray-900 dark:text-white group-hover:text-emerald-600 transition-colors">
+                  SaaS Dashboard Interaction Design</h3>
+                <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">Interaction patterns, micro-interactions and a
+                  reusable component library.</p>
+              </div>
+            </div>
+            <div class="mt-4 text-sm text-gray-600 dark:text-gray-300">
+              <p><strong>Highlights:</strong> Design system integration, component library, performance-focused UI.</p>
+              <p class="mt-2"><strong>Impact:</strong> Faster onboarding and reduced support tickets.</p>
+              <div class="mt-4 flex items-center gap-3">
+                <span
+                  class="rounded-full border dark:border-gray-600 px-3 py-1 text-xs font-medium case-cta group-hover:bg-gray-900 group-hover:text-white dark:group-hover:bg-white dark:group-hover:text-gray-900 transition-colors">Read
+                  case study</span>
+                <span class="text-xs text-gray-400">2024</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </a>
+
+      <!-- Project 4 -->
+      <a href="case-study.html?id=project-4"
+        class="block rounded-xl overflow-hidden border bg-white dark:bg-gray-800 dark:border-gray-700 project-card float-anim delay-4 hover:no-underline group"
+        data-category="ux, ui">
+        <article class="h-full">
+          <div class="p-6">
+            <div class="flex items-start gap-4">
+              <div class="w-20 h-12 rounded-md overflow-hidden flex-shrink-0 bg-gray-100">
+                <img src="https://via.placeholder.com/320x180.png?text=Mobile+Redesign" alt="Mobile app thumbnail"
+                  class="h-full w-full object-cover project-thumb" />
+              </div>
+              <div>
+                <h3
+                  class="text-lg font-semibold text-gray-900 dark:text-white group-hover:text-emerald-600 transition-colors">
+                  Mobile App UI/UX Redesign</h3>
+                <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">Complete redesign of a finance mobile app with
+                  improved onboarding & usability.</p>
+              </div>
+            </div>
+            <div class="mt-4 text-sm text-gray-600 dark:text-gray-300">
+              <p><strong>Focus:</strong> Onboarding flow, accessibility, navigation clarity.</p>
+              <p class="mt-2"><strong>Result:</strong> 27% better task completion + higher retention.</p>
+              <div class="mt-4 flex items-center gap-3">
+                <span
+                  class="rounded-full border dark:border-gray-600 px-3 py-1 text-xs font-medium case-cta group-hover:bg-gray-900 group-hover:text-white dark:group-hover:bg-white dark:group-hover:text-gray-900 transition-colors">Read
+                  case study</span>
+                <span class="text-xs text-gray-400">2024</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </a>
+
+      <!-- Project 5 -->
+      <a href="case-study.html?id=project-5"
+        class="block rounded-xl overflow-hidden border bg-white dark:bg-gray-800 dark:border-gray-700 project-card float-anim delay-5 hover:no-underline group"
+        data-category="visual design, motion and video">
+        <article class="h-full">
+          <div class="p-6">
+            <div class="flex items-start gap-4">
+              <div class="w-20 h-12 rounded-md overflow-hidden flex-shrink-0 bg-gray-100">
+                <img src="https://via.placeholder.com/320x180.png?text=Brand+Hero" alt="Brand hero thumbnail"
+                  class="h-full w-full object-cover project-thumb" />
+              </div>
+              <div>
+                <h3
+                  class="text-lg font-semibold text-gray-900 dark:text-white group-hover:text-emerald-600 transition-colors">
+                  Brand Website + 3D Hero Visuals</h3>
+                <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">High-end website visuals with 3D hero renders
+                  and
+                  motion loops.</p>
+              </div>
+            </div>
+            <div class="mt-4 text-sm text-gray-600 dark:text-gray-300">
+              <p><strong>Deliverables:</strong> 3D assets, hero banners, animations.</p>
+              <p class="mt-2"><strong>Impact:</strong> Increased brand credibility & conversion.</p>
+              <div class="mt-4 flex items-center gap-3">
+                <span
+                  class="rounded-full border dark:border-gray-600 px-3 py-1 text-xs font-medium case-cta group-hover:bg-gray-900 group-hover:text-white dark:group-hover:bg-white dark:group-hover:text-gray-900 transition-colors">Read
+                  case study</span>
+                <span class="text-xs text-gray-400">2024</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </a>
+
+      <!-- Project 6 -->
+      <a href="case-study.html?id=project-6"
+        class="block rounded-xl overflow-hidden border bg-white dark:bg-gray-800 dark:border-gray-700 project-card float-anim delay-6 hover:no-underline group"
+        data-category="ux, ui, design system">
+        <article class="h-full">
+          <div class="p-6">
+            <div class="flex items-start gap-4">
+              <div class="w-20 h-12 rounded-md overflow-hidden flex-shrink-0 bg-gray-100">
+                <img src="https://via.placeholder.com/320x180.png?text=Design+System" alt="Design system thumbnail"
+                  class="h-full w-full object-cover project-thumb" />
+              </div>
+              <div>
+                <h3
+                  class="text-lg font-semibold text-gray-900 dark:text-white group-hover:text-emerald-600 transition-colors">
+                  Design System + Components</h3>
+                <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">A scalable design system with tokens,
+                  components,
+                  and documentation.</p>
+              </div>
+            </div>
+            <div class="mt-4 text-sm text-gray-600 dark:text-gray-300">
+              <p><strong>Work Included:</strong> Tokens, components, documentation, guidelines.</p>
+              <p class="mt-2"><strong>Outcome:</strong> Faster design–dev delivery & cleaner UI consistency.</p>
+              <div class="mt-4 flex items-center gap-3">
+                <span
+                  class="rounded-full border dark:border-gray-600 px-3 py-1 text-xs font-medium case-cta group-hover:bg-gray-900 group-hover:text-white dark:group-hover:bg-white dark:group-hover:text-gray-900 transition-colors">Read
+                  case study</span>
+                <span class="text-xs text-gray-400">2025</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </a>
+    </div>
+
+    <!-- CTA: Services -->
+    <div class="mt-8 rounded-xl border bg-white dark:bg-gray-800 dark:border-gray-700 p-6">
+      <h3 class="text-base font-semibold text-gray-900 dark:text-white">Looking for help on a project?</h3>
+      <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">I offer UX audits, product design sprints, 3D hero scenes
+        and motion packages. <a href="services.html"
+          class="text-emerald-600 font-medium hover:underline dark:text-emerald-400">See available services →</a></p>
+    </div>
+  </main>
+
+  <!-- LOGO MARQUEE -->
+  <section class="py-16 bg-black border-t border-gray-800 overflow-hidden galaxy-bg">
+    <div class="mx-auto max-w-6xl px-4 mb-10 text-center">
+      <p class="text-xs font-bold tracking-[0.2em] text-gray-500 uppercase">Trusted by</p>
+    </div>
+    <!-- Flattened Track: No padding, NO GAP (using margins instead) -->
+    <div class="marquee-track flex items-center">
+
+      <div
+        class="flex-shrink-0 w-32 h-20 bg-gray-800/50 border border-gray-700 rounded-xl flex items-center justify-center hover:border-gray-500 hover:bg-gray-800 hover:shadow-lg hover:shadow-emerald-900/20 transition-all duration-300 group mr-6">
+        <span class="text-gray-400 font-semibold text-sm group-hover:text-white transition-colors">Airbnb</span>
+      </div>
+
+      <div
+        class="flex-shrink-0 w-32 h-20 bg-gray-800/50 border border-gray-700 rounded-xl flex items-center justify-center hover:border-gray-500 hover:bg-gray-800 hover:shadow-lg hover:shadow-emerald-900/20 transition-all duration-300 group mr-6">
+        <span class="text-gray-400 font-semibold text-sm group-hover:text-white transition-colors">Stripe</span>
+      </div>
+
+      <div
+        class="flex-shrink-0 w-32 h-20 bg-gray-800/50 border border-gray-700 rounded-xl flex items-center justify-center hover:border-gray-500 hover:bg-gray-800 hover:shadow-lg hover:shadow-emerald-900/20 transition-all duration-300 group mr-6">
+        <span class="text-gray-400 font-semibold text-sm group-hover:text-white transition-colors">Netflix</span>
+      </div>
+
+      <div
+        class="flex-shrink-0 w-32 h-20 bg-gray-800/50 border border-gray-700 rounded-xl flex items-center justify-center hover:border-gray-500 hover:bg-gray-800 hover:shadow-lg hover:shadow-emerald-900/20 transition-all duration-300 group mr-6">
+        <span class="text-gray-400 font-semibold text-sm group-hover:text-white transition-colors">Uber</span>
+      </div>
+
+      <div
+        class="flex-shrink-0 w-32 h-20 bg-gray-800/50 border border-gray-700 rounded-xl flex items-center justify-center hover:border-gray-500 hover:bg-gray-800 hover:shadow-lg hover:shadow-emerald-900/20 transition-all duration-300 group mr-6">
+        <span class="text-gray-400 font-semibold text-sm group-hover:text-white transition-colors">Adobe</span>
+      </div>
+
+      <div
+        class="flex-shrink-0 w-32 h-20 bg-gray-800/50 border border-gray-700 rounded-xl flex items-center justify-center hover:border-gray-500 hover:bg-gray-800 hover:shadow-lg hover:shadow-emerald-900/20 transition-all duration-300 group mr-6">
+        <span class="text-gray-400 font-semibold text-sm group-hover:text-white transition-colors">Figma</span>
+      </div>
+
+      <div
+        class="flex-shrink-0 w-32 h-20 bg-gray-800/50 border border-gray-700 rounded-xl flex items-center justify-center hover:border-gray-500 hover:bg-gray-800 hover:shadow-lg hover:shadow-emerald-900/20 transition-all duration-300 group mr-6">
+        <span class="text-gray-400 font-semibold text-sm group-hover:text-white transition-colors">Google</span>
+      </div>
+
+      <div
+        class="flex-shrink-0 w-32 h-20 bg-gray-800/50 border border-gray-700 rounded-xl flex items-center justify-center hover:border-gray-500 hover:bg-gray-800 hover:shadow-lg hover:shadow-emerald-900/20 transition-all duration-300 group mr-6">
+        <span class="text-gray-400 font-semibold text-sm group-hover:text-white transition-colors">Spotify</span>
+      </div>
+
+      <div
+        class="flex-shrink-0 w-32 h-20 bg-gray-800/50 border border-gray-700 rounded-xl flex items-center justify-center hover:border-gray-500 hover:bg-gray-800 hover:shadow-lg hover:shadow-emerald-900/20 transition-all duration-300 group mr-6">
+        <span class="text-gray-400 font-semibold text-sm group-hover:text-white transition-colors">Airbnb</span>
+      </div>
+
+      <div
+        class="flex-shrink-0 w-32 h-20 bg-gray-800/50 border border-gray-700 rounded-xl flex items-center justify-center hover:border-gray-500 hover:bg-gray-800 hover:shadow-lg hover:shadow-emerald-900/20 transition-all duration-300 group mr-6">
+        <span class="text-gray-400 font-semibold text-sm group-hover:text-white transition-colors">Stripe</span>
+      </div>
+
+      <div
+        class="flex-shrink-0 w-32 h-20 bg-gray-800/50 border border-gray-700 rounded-xl flex items-center justify-center hover:border-gray-500 hover:bg-gray-800 hover:shadow-lg hover:shadow-emerald-900/20 transition-all duration-300 group mr-6">
+        <span class="text-gray-400 font-semibold text-sm group-hover:text-white transition-colors">Netflix</span>
+      </div>
+
+      <div
+        class="flex-shrink-0 w-32 h-20 bg-gray-800/50 border border-gray-700 rounded-xl flex items-center justify-center hover:border-gray-500 hover:bg-gray-800 hover:shadow-lg hover:shadow-emerald-900/20 transition-all duration-300 group mr-6">
+        <span class="text-gray-400 font-semibold text-sm group-hover:text-white transition-colors">Uber</span>
+      </div>
+
+      <div
+        class="flex-shrink-0 w-32 h-20 bg-gray-800/50 border border-gray-700 rounded-xl flex items-center justify-center hover:border-gray-500 hover:bg-gray-800 hover:shadow-lg hover:shadow-emerald-900/20 transition-all duration-300 group mr-6">
+        <span class="text-gray-400 font-semibold text-sm group-hover:text-white transition-colors">Adobe</span>
+      </div>
+
+      <div
+        class="flex-shrink-0 w-32 h-20 bg-gray-800/50 border border-gray-700 rounded-xl flex items-center justify-center hover:border-gray-500 hover:bg-gray-800 hover:shadow-lg hover:shadow-emerald-900/20 transition-all duration-300 group mr-6">
+        <span class="text-gray-400 font-semibold text-sm group-hover:text-white transition-colors">Figma</span>
+      </div>
+
+      <div
+        class="flex-shrink-0 w-32 h-20 bg-gray-800/50 border border-gray-700 rounded-xl flex items-center justify-center hover:border-gray-500 hover:bg-gray-800 hover:shadow-lg hover:shadow-emerald-900/20 transition-all duration-300 group mr-6">
+        <span class="text-gray-400 font-semibold text-sm group-hover:text-white transition-colors">Google</span>
+      </div>
+
+      <div
+        class="flex-shrink-0 w-32 h-20 bg-gray-800/50 border border-gray-700 rounded-xl flex items-center justify-center hover:border-gray-500 hover:bg-gray-800 hover:shadow-lg hover:shadow-emerald-900/20 transition-all duration-300 group mr-6">
+        <span class="text-gray-400 font-semibold text-sm group-hover:text-white transition-colors">Spotify</span>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-white dark:bg-gray-800 border-t dark:border-gray-700">
+    <div
+      class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-6 text-xs text-gray-500 dark:text-gray-400 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+      <div>© 2025 Your Name — UX / UI &amp; Visual Design</div>
+      <div class="flex flex-wrap gap-3">
+        <a href="index.html#about" class="hover:text-gray-800 dark:hover:text-white">About</a>
+        <a href="projects.html" class="hover:text-gray-800 dark:hover:text-white">Projects</a>
+        <a href="index.html#contact" class="hover:text-gray-800 dark:hover:text-white">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- PROJECT DETAILS MODAL -->
+
+
+  <!-- SCRIPTS -->
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/interactions.js"></script>
+  <script src="assets/js/projects.js"></script>
+  <script src="assets/js/particles.js"></script>
+</body>
+
+</html>
