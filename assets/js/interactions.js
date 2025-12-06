@@ -77,28 +77,38 @@ if (contactForm) {
             }
         })
             .then(response => {
+                console.log("Form response status:", response.status);
                 if (response.ok) {
-                    // Success
+                    // Success (FormSubmit usually returns 200 OK with success message)
                     formStatus.innerText = "Message sent successfully! I'll get back to you soon.";
                     formStatus.className = "text-xs font-medium mt-2 text-emerald-600";
                     contactForm.reset();
                 } else {
                     // Error from server
-                    return response.json().then(data => {
+                    response.json().then(data => {
+                        console.log("Form error data:", data);
                         if (data.message) {
-                            formStatus.innerText = data.message;
+                            formStatus.innerText = "Error: " + data.message;
                         } else if (Object.hasOwn(data, 'errors')) {
+                            // Web3Forms style
                             formStatus.innerText = data["errors"].map(error => error["message"]).join(", ");
                         } else {
-                            formStatus.innerText = "Oops! Look like there was a problem.";
+                            // Generic JSON error
+                            formStatus.innerText = "Submission failed. (Status: " + response.status + ")";
                         }
-                        formStatus.className = "text-xs font-medium mt-2 text-red-600";
-                    })
+                    }).catch(parseErr => {
+                        // Non-JSON error (e.g. HTML error page or network block)
+                        console.error("Form response parsing error:", parseErr);
+                        formStatus.innerText = "Server Error (" + response.status + "): Please try again later.";
+                    });
+
+                    formStatus.className = "text-xs font-medium mt-2 text-red-600";
                 }
             })
             .catch(error => {
                 // Network Error
-                formStatus.innerText = "Oops! There was a problem submitting your form.";
+                console.error("Form submission network error:", error);
+                formStatus.innerText = "Network Error: Check your connection or try again.";
                 formStatus.className = "text-xs font-medium mt-2 text-red-600";
             })
             .finally(() => {
