@@ -1,27 +1,4 @@
-// Parallax on thumbnails based on mouse position
-(function () {
-    const thumbs = document.querySelectorAll('.project-thumb');
-    if (!thumbs.length) return;
-
-    window.addEventListener('mousemove', (e) => {
-        const cx = window.innerWidth / 2;
-        const cy = window.innerHeight / 2;
-        const dx = (e.clientX - cx) / cx;
-        const dy = (e.clientY - cy) / cy;
-
-        thumbs.forEach((img, i) => {
-            // stagger intensity by index
-            const intensity = 4 + (i % 3);
-            // apply transforms quietly
-            img.style.transform = `translate(${dx * intensity}px, ${dy * intensity}px) scale(${1.02 - Math.abs(dx) * 0.005})`;
-        });
-    });
-
-    // reset on leave
-    window.addEventListener('mouseleave', () => {
-        thumbs.forEach(img => img.style.transform = '');
-    });
-})();
+// Parallax removed as per user request (image should be static inside card)
 
 // Project Navigation Logic
 const projectsGrid = document.getElementById('projects-grid');
