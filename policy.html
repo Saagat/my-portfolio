@@ -37,33 +37,33 @@
             user-select: none;
         }
     </style>
-</head>
 
-<style>
-    /* Hardcoded Critical CSS */
-    html,
-    body {
-        background-color: #f9fafb;
-        color: #111827;
-    }
 
-    html.dark,
-    html.dark body {
-        background-color: #030712 !important;
-        color: #f3f4f6 !important;
-    }
+    <style>
+        /* Hardcoded Critical CSS */
+        html,
+        body {
+            background-color: #f9fafb;
+            color: #111827;
+        }
 
-    .preload * {
-        transition: none !important;
-    }
-</style>
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        setTimeout(() => {
-            document.body.classList.remove("preload");
-        }, 200);
-    });
-</script>
+        html.dark,
+        html.dark body {
+            background-color: #030712 !important;
+            color: #f3f4f6 !important;
+        }
+
+        .preload * {
+            transition: none !important;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            setTimeout(() => {
+                document.body.classList.remove("preload");
+            }, 200);
+        });
+    </script>
 </head>
 
 <body
