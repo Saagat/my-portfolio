@@ -4,6 +4,10 @@
    Global Styles & Animations
    ========================================= */
 
+html {
+    scrollbar-gutter: stable;
+}
+
 body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
