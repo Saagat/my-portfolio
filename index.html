@@ -21,6 +21,11 @@
 </head>
 
 <body class="bg-gray-50 text-gray-900 antialiased dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+  <!-- DEBUG BANNER (REMOVE AFTER VERIFICATION) -->
+  <div
+    style="background:red; color:white; text-align:center; padding:10px; font-weight:bold; position:fixed; top:0; left:0; right:0; z-index:9999;">
+    ⚠️ WEBSITE UPDATED - IF YOU SEE THIS, CHANGES ARE WORKING ⚠️
+  </div>
   <!-- Particles Canvas -->
   <canvas id="particles-canvas" class="fixed inset-0 z-30 pointer-events-none"></canvas>
 
@@ -200,29 +205,43 @@
 
         <!-- INFO CARDS -->
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          </p>
-          <p class="mt-2 text-2xl font-bold text-gray-900 dark:text-white">30+</p>
-          <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">
-            Web &amp; mobile products, marketing visuals, explainer
-            videos.
-          </p>
-        </div>
-        <div class="rounded-xl border bg-white p-4 text-sm dark:bg-gray-800 dark:border-gray-700">
-          <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-400">
-            Core Tools
-          </p>
-          <p class="mt-2 text-xs text-gray-600 dark:text-gray-400">
-            Figma, Adobe XD, Blender,Adobe Master Collection,after Effects,Premiere pro.
-          </p>
-        </div>
-        <div class="rounded-xl border bg-white p-4 text-sm dark:bg-gray-800 dark:border-gray-700">
-          <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-400">
-            Availability
-          </p>
-          <p class="mt-2 text-xs text-gray-600 dark:text-gray-400">
-            Open for part-time freelance, remote product work, and
-            collaborations.
-          </p>
+          <div class="rounded-xl border bg-white p-4 text-sm dark:bg-gray-800 dark:border-gray-700">
+            <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-400">
+              Years of Experience
+            </p>
+            <p class="mt-2 text-2xl font-bold text-gray-900 dark:text-white">11</p>
+            <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">
+              Working across UX, UI, 3D, and motion graphics.
+            </p>
+          </div>
+          <div class="rounded-xl border bg-white p-4 text-sm dark:bg-gray-800 dark:border-gray-700">
+            <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-400">
+              Projects Completed
+            </p>
+            <p class="mt-2 text-2xl font-bold text-gray-900 dark:text-white">30+</p>
+            <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">
+              Web &amp; mobile products, marketing visuals, explainer
+              videos.
+            </p>
+          </div>
+          <!-- Closing div moved to after all cards -->
+          <div class="rounded-xl border bg-white p-4 text-sm dark:bg-gray-800 dark:border-gray-700">
+            <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-400">
+              Core Tools
+            </p>
+            <p class="mt-2 text-xs text-gray-600 dark:text-gray-400">
+              Figma, Adobe XD, Blender,Adobe Master Collection,after Effects,Premiere pro.
+            </p>
+          </div>
+          <div class="rounded-xl border bg-white p-4 text-sm dark:bg-gray-800 dark:border-gray-700">
+            <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-400">
+              Availability
+            </p>
+            <p class="mt-2 text-xs text-gray-600 dark:text-gray-400">
+              Open for part-time freelance, remote product work, and
+              collaborations.
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -451,258 +470,260 @@
         </div>
       </div>
     </div>
-  </section>
+    </div>
 
-  <!-- CONTACT -->
-  <section id="contact" class="bg-white border-t dark:bg-gray-900 dark:border-gray-800 transition-colors duration-300">
-    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
-      <div class="grid grid-cols-1 lg:grid-cols-[2fr,1.2fr] gap-10">
-        <!-- FORM -->
-        <div>
-          <h2 class="text-base font-semibold text-gray-800 dark:text-white">
-            Let’s Work Together
-          </h2>
-          <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 max-w-md">
-            Tell me about your product, timeline and budget. I usually
-            reply within 24–48 hours.
-          </p>
+    <!-- CONTACT -->
+    <section id="contact"
+      class="bg-white border-t dark:bg-gray-900 dark:border-gray-800 transition-colors duration-300">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+        <div class="grid grid-cols-1 lg:grid-cols-[2fr,1.2fr] gap-10">
+          <!-- FORM -->
+          <div>
+            <h2 class="text-base font-semibold text-gray-800 dark:text-white">
+              Let’s Work Together
+            </h2>
+            <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 max-w-md">
+              Tell me about your product, timeline and budget. I usually
+              reply within 24–48 hours.
+            </p>
 
-          <form id="contact-form" class="mt-6 space-y-4 text-sm" action="https://api.web3forms.com/submit"
-            method="POST">
-            <!-- Web3Forms Configuration -->
-            <input type="hidden" name="access_key" value="1efe0c23-984f-40c4-acff-5e4a2b872256">
-            <input type="hidden" name="subject" value="New Portfolio Contact">
-            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-            <!-- End Configuration -->
+            <form id="contact-form" class="mt-6 space-y-4 text-sm" action="https://api.web3forms.com/submit"
+              method="POST">
+              <!-- Web3Forms Configuration -->
+              <input type="hidden" name="access_key" value="1efe0c23-984f-40c4-acff-5e4a2b872256">
+              <input type="hidden" name="subject" value="New Portfolio Contact">
+              <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+              <!-- End Configuration -->
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <input type="text" name="name" required placeholder="Your Name"
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <input type="text" name="name" required placeholder="Your Name"
+                  class="w-full rounded-lg border px-3 py-2 text-xs focus:outline-none focus:ring-1 focus:ring-gray-900 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:focus:ring-gray-600" />
+                <input type="email" name="email" required placeholder="Email"
+                  class="w-full rounded-lg border px-3 py-2 text-xs focus:outline-none focus:ring-1 focus:ring-gray-900 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:focus:ring-gray-600" />
+              </div>
+              <div class="flex gap-3 w-full">
+                <select name="country_code"
+                  class="appearance-none w-32 rounded-lg border pl-3 pr-8 py-2 text-xs bg-white focus:outline-none focus:ring-1 focus:ring-gray-900 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:focus:ring-gray-600 bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20fill%3D%22none%22%20viewBox%3D%220%200%2020%2020%22%3E%3Cpath%20stroke%3D%22%236b7280%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%221.5%22%20d%3D%22M6%208l4%204%204-4%22%2F%3E%3C%2Fsvg%3E')] bg-[length:1.25rem_1.25rem] bg-no-repeat bg-[right_0.5rem_center]">
+                  <option value="+91">+91 (IN)</option>
+                  <option value="+1">+1 (US)</option>
+                  <option value="+44">+44 (UK)</option>
+                  <option value="+971">+971 (UAE)</option>
+                  <option value="+61">+61 (AU)</option>
+                </select>
+                <input type="tel" name="phone" placeholder="Mobile Number"
+                  class="flex-1 rounded-lg border px-3 py-2 text-xs focus:outline-none focus:ring-1 focus:ring-gray-900 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:focus:ring-gray-600" />
+              </div>
+              <input type="text" name="subject" placeholder="Project / Subject"
                 class="w-full rounded-lg border px-3 py-2 text-xs focus:outline-none focus:ring-1 focus:ring-gray-900 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:focus:ring-gray-600" />
-              <input type="email" name="email" required placeholder="Email"
-                class="w-full rounded-lg border px-3 py-2 text-xs focus:outline-none focus:ring-1 focus:ring-gray-900 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:focus:ring-gray-600" />
+              <textarea name="message" rows="5" required
+                placeholder="Tell me about the project, goals, scope, and timeline..."
+                class="w-full rounded-lg border px-3 py-2 text-xs focus:outline-none focus:ring-1 focus:ring-gray-900 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:focus:ring-gray-600"></textarea>
+              <button type="submit"
+                class="rounded-full bg-gray-900 text-white text-xs px-5 py-2 font-medium hover:bg-gray-800 dark:bg-emerald-600 dark:hover:bg-emerald-700 transition-all duration-300">
+                Send Message
+              </button>
+              <p id="form-status" class="hidden text-xs font-medium mt-2"></p>
+            </form>
+          </div>
+
+          <!-- CONTACT INFO -->
+          <aside
+            class="rounded-2xl border bg-gray-50 p-5 text-xs text-gray-600 space-y-3 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400">
+            <div>
+              <span class="text-base font-semibold text-gray-800 dark:text-white">Availability For Project's </span>
             </div>
-            <div class="flex gap-3 w-full">
-              <select name="country_code"
-                class="appearance-none w-32 rounded-lg border pl-3 pr-8 py-2 text-xs bg-white focus:outline-none focus:ring-1 focus:ring-gray-900 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:focus:ring-gray-600 bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20fill%3D%22none%22%20viewBox%3D%220%200%2020%2020%22%3E%3Cpath%20stroke%3D%22%236b7280%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%221.5%22%20d%3D%22M6%208l4%204%204-4%22%2F%3E%3C%2Fsvg%3E')] bg-[length:1.25rem_1.25rem] bg-no-repeat bg-[right_0.5rem_center]">
-                <option value="+91">+91 (IN)</option>
-                <option value="+1">+1 (US)</option>
-                <option value="+44">+44 (UK)</option>
-                <option value="+971">+971 (UAE)</option>
-                <option value="+61">+61 (AU)</option>
-              </select>
-              <input type="tel" name="phone" placeholder="Mobile Number"
-                class="flex-1 rounded-lg border px-3 py-2 text-xs focus:outline-none focus:ring-1 focus:ring-gray-900 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:focus:ring-gray-600" />
+            <div>
+              <p>Location: Mumbai • Remote • IST • PAN</p>
+              <p class="mt-1">
+                Available For Full Time Work:
+                <span class="font-semibold text-emerald-600">
+                  Immediately Available
+                </span>
+              </p>
+              <p class="mt-1">
+                Freelance:
+                <span class="font-semibold text-emerald-600">
+                  Open
+                </span>
+                (10–20 hrs / week)
+              </p>
+              <p>
+                Ready for short sprints, design audits, and MVP builds.
+              </p>
             </div>
-            <input type="text" name="subject" placeholder="Project / Subject"
-              class="w-full rounded-lg border px-3 py-2 text-xs focus:outline-none focus:ring-1 focus:ring-gray-900 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:focus:ring-gray-600" />
-            <textarea name="message" rows="5" required
-              placeholder="Tell me about the project, goals, scope, and timeline..."
-              class="w-full rounded-lg border px-3 py-2 text-xs focus:outline-none focus:ring-1 focus:ring-gray-900 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:focus:ring-gray-600"></textarea>
-            <button type="submit"
-              class="rounded-full bg-gray-900 text-white text-xs px-5 py-2 font-medium hover:bg-gray-800 dark:bg-emerald-600 dark:hover:bg-emerald-700 transition-all duration-300">
-              Send Message
-            </button>
-            <p id="form-status" class="hidden text-xs font-medium mt-2"></p>
-          </form>
+            <div>
+              <p class="text-[11px] font-semibold text-gray-500 uppercase dark:text-gray-400">
+                Social
+              </p>
+              <div class="mt-2 flex flex-wrap gap-2">
+                <a href="https://www.behance.net/artworks_N" target="_blank"
+                  class="rounded-full border px-3 py-1 text-[11px] hover:bg-gray-900 hover:text-white dark:border-gray-600 dark:hover:bg-gray-700">
+                  Behance
+                </a>
+                <a href="https://dribbble.com/Navnath_S" target="_blank"
+                  class="rounded-full border px-3 py-1 text-[11px] hover:bg-gray-900 hover:text-white dark:border-gray-600 dark:hover:bg-gray-700">
+                  Dribbble
+                </a>
+
+                <a href="https://www.linkedin.com/in/s007navrathart/" target="_blank"
+                  class="rounded-full border px-3 py-1 text-[11px] hover:bg-gray-900 hover:text-white dark:border-gray-600 dark:hover:bg-gray-700">
+                  LinkedIn
+                </a>
+
+                <a href="https://www.instagram.com/inkbysn.28/" target="_blank"
+                  class="rounded-full border px-3 py-1 text-[11px] hover:bg-gray-900 hover:text-white dark:border-gray-600 dark:hover:bg-gray-700">
+                  Instagram
+                </a>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOG (Optional) -->
+    <section id="blog" class="bg-gray-50 border-t dark:bg-gray-950 dark:border-gray-800 transition-colors duration-300">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+          <div>
+            <h2 class="text-base font-semibold text-gray-800 dark:text-white">
+              Latest from the Blog
+            </h2>
+            <p class="text-xs text-gray-500 dark:text-gray-400">
+              Thoughts on design, process, and technology.
+            </p>
+          </div>
+          <a href="blog.html"
+            class="text-xs rounded-full border px-3 py-1 font-medium text-gray-700 hover:bg-gray-900 hover:text-white self-start sm:self-center dark:text-gray-300 dark:border-gray-600 dark:hover:bg-gray-800">
+            Read All Articles
+          </a>
         </div>
 
-        <!-- CONTACT INFO -->
-        <aside
-          class="rounded-2xl border bg-gray-50 p-5 text-xs text-gray-600 space-y-3 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400">
-          <div>
-            <span class="text-base font-semibold text-gray-800 dark:text-white">Availability For Project's </span>
-          </div>
-          <div>
-            <p>Location: Mumbai • Remote • IST • PAN</p>
-            <p class="mt-1">
-              Available For Full Time Work:
-              <span class="font-semibold text-emerald-600">
-                Immediately Available
-              </span>
-            </p>
-            <p class="mt-1">
-              Freelance:
-              <span class="font-semibold text-emerald-600">
-                Open
-              </span>
-              (10–20 hrs / week)
-            </p>
-            <p>
-              Ready for short sprints, design audits, and MVP builds.
-            </p>
-          </div>
-          <div>
-            <p class="text-[11px] font-semibold text-gray-500 uppercase dark:text-gray-400">
-              Social
-            </p>
-            <div class="mt-2 flex flex-wrap gap-2">
-              <a href="https://www.behance.net/artworks_N" target="_blank"
-                class="rounded-full border px-3 py-1 text-[11px] hover:bg-gray-900 hover:text-white dark:border-gray-600 dark:hover:bg-gray-700">
-                Behance
-              </a>
-              <a href="https://dribbble.com/Navnath_S" target="_blank"
-                class="rounded-full border px-3 py-1 text-[11px] hover:bg-gray-900 hover:text-white dark:border-gray-600 dark:hover:bg-gray-700">
-                Dribbble
-              </a>
-
-              <a href="https://www.linkedin.com/in/s007navrathart/" target="_blank"
-                class="rounded-full border px-3 py-1 text-[11px] hover:bg-gray-900 hover:text-white dark:border-gray-600 dark:hover:bg-gray-700">
-                LinkedIn
-              </a>
-
-              <a href="https://www.instagram.com/inkbysn.28/" target="_blank"
-                class="rounded-full border px-3 py-1 text-[11px] hover:bg-gray-900 hover:text-white dark:border-gray-600 dark:hover:bg-gray-700">
-                Instagram
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- BLOG POST 1 -->
+          <article
+            class="flex flex-col bg-white border rounded-xl overflow-hidden project-card float-anim delay-1 dark:bg-gray-800 dark:border-gray-700">
+            <div class="h-40 bg-gray-200 overflow-hidden">
+              <img src="https://picsum.photos/seed/blog1/600/400" alt="Blog 1"
+                class="h-full w-full object-cover project-thumb" />
+            </div>
+            <div class="p-4 flex-1 flex flex-col">
+              <p class="text-[10px] uppercase tracking-wide text-gray-400">
+                Design Systems
+              </p>
+              <h3 class="mt-1 text-sm font-semibold text-gray-900 dark:text-white">
+                Building Scalable Design Systems in Figma
+              </h3>
+              <p class="mt-2 text-gray-600 flex-1 dark:text-gray-400">
+                How to structure your tokens and components for multi-brand
+                support.
+              </p>
+              <a href="blog.html" class="mt-3 text-emerald-600 font-medium hover:text-emerald-700 case-cta">
+                Read article
               </a>
             </div>
-          </div>
-        </aside>
-      </div>
-    </div>
-  </section>
+          </article>
 
-  <!-- BLOG (Optional) -->
-  <section id="blog" class="bg-gray-50 border-t dark:bg-gray-950 dark:border-gray-800 transition-colors duration-300">
-    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
-      <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
-        <div>
-          <h2 class="text-base font-semibold text-gray-800 dark:text-white">
-            Latest from the Blog
-          </h2>
-          <p class="text-xs text-gray-500 dark:text-gray-400">
-            Thoughts on design, process, and technology.
-          </p>
+          <!-- BLOG POST 2 -->
+          <article
+            class="flex flex-col bg-white border rounded-xl overflow-hidden project-card float-anim delay-2 dark:bg-gray-800 dark:border-gray-700">
+            <div class="h-40 bg-gray-200 overflow-hidden">
+              <img src="https://picsum.photos/seed/blog2/600/400" alt="Blog 2"
+                class="h-full w-full object-cover project-thumb" />
+            </div>
+            <div class="p-4 flex-1 flex flex-col">
+              <p class="text-[10px] uppercase tracking-wide text-gray-400">
+                Career
+              </p>
+              <h3 class="mt-1 text-sm font-semibold text-gray-900 dark:text-white">
+                From Graphic Design to Product Design
+              </h3>
+              <p class="mt-2 text-gray-600 flex-1 dark:text-gray-400">
+                My journey transitioning roles and the skills that transferred
+                over.
+              </p>
+              <a href="blog.html" class="mt-3 text-emerald-600 font-medium hover:text-emerald-700 case-cta">
+                Read article
+              </a>
+            </div>
+          </article>
+
+          <!-- BLOG POST 3 -->
+          <article
+            class="flex flex-col bg-white border rounded-xl overflow-hidden project-card float-anim delay-3 dark:bg-gray-800 dark:border-gray-700">
+            <div class="h-40 bg-gray-200 overflow-hidden">
+              <img src="https://picsum.photos/seed/blog3/600/400" alt="Blog 3"
+                class="h-full w-full object-cover project-thumb" />
+            </div>
+            <div class="p-4 flex-1 flex flex-col">
+              <p class="text-[10px] uppercase tracking-wide text-gray-400">
+                Process
+              </p>
+              <h3 class="mt-1 text-sm font-semibold text-gray-900 dark:text-white">
+                Blog Post Title 3
+              </h3>
+              <p class="mt-2 text-gray-600 flex-1 dark:text-gray-400">
+                Use this section to talk about your process and lessons.
+              </p>
+              <a href="blog.html" class="mt-3 text-emerald-600 font-medium hover:text-emerald-700 case-cta">
+                Read article
+              </a>
+            </div>
+          </article>
         </div>
-        <a href="blog.html"
-          class="text-xs rounded-full border px-3 py-1 font-medium text-gray-700 hover:bg-gray-900 hover:text-white self-start sm:self-center dark:text-gray-300 dark:border-gray-600 dark:hover:bg-gray-800">
-          Read All Articles
-        </a>
       </div>
+    </section>
 
-      <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-        <!-- BLOG POST 1 -->
-        <article
-          class="flex flex-col bg-white border rounded-xl overflow-hidden project-card float-anim delay-1 dark:bg-gray-800 dark:border-gray-700">
-          <div class="h-40 bg-gray-200 overflow-hidden">
-            <img src="https://picsum.photos/seed/blog1/600/400" alt="Blog 1"
-              class="h-full w-full object-cover project-thumb" />
-          </div>
-          <div class="p-4 flex-1 flex flex-col">
-            <p class="text-[10px] uppercase tracking-wide text-gray-400">
-              Design Systems
-            </p>
-            <h3 class="mt-1 text-sm font-semibold text-gray-900 dark:text-white">
-              Building Scalable Design Systems in Figma
-            </h3>
-            <p class="mt-2 text-gray-600 flex-1 dark:text-gray-400">
-              How to structure your tokens and components for multi-brand
-              support.
-            </p>
-            <a href="blog.html" class="mt-3 text-emerald-600 font-medium hover:text-emerald-700 case-cta">
-              Read article
-            </a>
-          </div>
-        </article>
 
-        <!-- BLOG POST 2 -->
-        <article
-          class="flex flex-col bg-white border rounded-xl overflow-hidden project-card float-anim delay-2 dark:bg-gray-800 dark:border-gray-700">
-          <div class="h-40 bg-gray-200 overflow-hidden">
-            <img src="https://picsum.photos/seed/blog2/600/400" alt="Blog 2"
-              class="h-full w-full object-cover project-thumb" />
-          </div>
-          <div class="p-4 flex-1 flex flex-col">
-            <p class="text-[10px] uppercase tracking-wide text-gray-400">
-              Career
-            </p>
-            <h3 class="mt-1 text-sm font-semibold text-gray-900 dark:text-white">
-              From Graphic Design to Product Design
-            </h3>
-            <p class="mt-2 text-gray-600 flex-1 dark:text-gray-400">
-              My journey transitioning roles and the skills that transferred
-              over.
-            </p>
-            <a href="blog.html" class="mt-3 text-emerald-600 font-medium hover:text-emerald-700 case-cta">
-              Read article
-            </a>
-          </div>
-        </article>
 
-        <!-- BLOG POST 3 -->
-        <article
-          class="flex flex-col bg-white border rounded-xl overflow-hidden project-card float-anim delay-3 dark:bg-gray-800 dark:border-gray-700">
-          <div class="h-40 bg-gray-200 overflow-hidden">
-            <img src="https://picsum.photos/seed/blog3/600/400" alt="Blog 3"
-              class="h-full w-full object-cover project-thumb" />
-          </div>
-          <div class="p-4 flex-1 flex flex-col">
-            <p class="text-[10px] uppercase tracking-wide text-gray-400">
-              Process
-            </p>
-            <h3 class="mt-1 text-sm font-semibold text-gray-900 dark:text-white">
-              Blog Post Title 3
-            </h3>
-            <p class="mt-2 text-gray-600 flex-1 dark:text-gray-400">
-              Use this section to talk about your process and lessons.
-            </p>
-            <a href="blog.html" class="mt-3 text-emerald-600 font-medium hover:text-emerald-700 case-cta">
-              Read article
-            </a>
-          </div>
-        </article>
+    <!-- FOOTER -->
+    <footer class="bg-white border-t dark:bg-gray-900 dark:border-gray-800 transition-colors duration-300">
+      <div
+        class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-6 text-xs text-gray-500 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+        <div>
+          © 2025 Sagar Navnath — UX / UI &amp; Visual Design
+        </div>
+        <div class="flex flex-wrap gap-3">
+          <a href="#about" class="hover:text-gray-800 dark:hover:text-gray-300">About</a>
+          <a href="projects.html" class="hover:text-gray-800 dark:hover:text-gray-300">Projects</a>
+          <a href="#contact" class="hover:text-gray-800 dark:hover:text-gray-300">Contact</a>
+          <a href="policy.html" class="hover:text-gray-900 dark:hover:text-white transition-colors">Privacy Policy</a>
+        </div>
       </div>
-    </div>
-  </section>
+    </footer>
 
+    <!-- ---------- SVG template for a paper/origami bird (hidden) ---------- -->
+    <svg id="bird-template" width="200" height="120" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg"
+      style="display:none;">
+      <!-- a simple stylized origami bird made of flat shapes -->
+      <g transform="translate(0,0)">
+        <defs>
+          <linearGradient id="bgGrad" x1="0" x2="1">
+            <stop offset="0" stop-color="#ffffff" stop-opacity="0.95" />
+            <stop offset="1" stop-color="#e6fffa" stop-opacity="0.95" />
+          </linearGradient>
+        </defs>
 
-
-  <!-- FOOTER -->
-  <footer class="bg-white border-t dark:bg-gray-900 dark:border-gray-800 transition-colors duration-300">
-    <div
-      class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-6 text-xs text-gray-500 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-      <div>
-        © 2025 Sagar Navnath — UX / UI &amp; Visual Design
-      </div>
-      <div class="flex flex-wrap gap-3">
-        <a href="#about" class="hover:text-gray-800 dark:hover:text-gray-300">About</a>
-        <a href="projects.html" class="hover:text-gray-800 dark:hover:text-gray-300">Projects</a>
-        <a href="#contact" class="hover:text-gray-800 dark:hover:text-gray-300">Contact</a>
-      </div>
-    </div>
-  </footer>
-
-  <!-- ---------- SVG template for a paper/origami bird (hidden) ---------- -->
-  <svg id="bird-template" width="200" height="120" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg"
-    style="display:none;">
-    <!-- a simple stylized origami bird made of flat shapes -->
-    <g transform="translate(0,0)">
-      <defs>
-        <linearGradient id="bgGrad" x1="0" x2="1">
-          <stop offset="0" stop-color="#ffffff" stop-opacity="0.95" />
-          <stop offset="1" stop-color="#e6fffa" stop-opacity="0.95" />
-        </linearGradient>
-      </defs>
-
-      <!-- body -->
-      <g class="body">
-        <polygon points="20,60 80,18 140,60 100,68" fill="url(#bgGrad)"></polygon>
-        <!-- wing left -->
-        <g class="wing" transform="translate(40,50)">
-          <polygon points="0,0 46,-26 72,6 10,-2" fill="#bde9dd" opacity="0.95"></polygon>
+        <!-- body -->
+        <g class="body">
+          <polygon points="20,60 80,18 140,60 100,68" fill="url(#bgGrad)"></polygon>
+          <!-- wing left -->
+          <g class="wing" transform="translate(40,50)">
+            <polygon points="0,0 46,-26 72,6 10,-2" fill="#bde9dd" opacity="0.95"></polygon>
+          </g>
+          <!-- wing right -->
+          <g class="wing" transform="translate(96,48)" style="animation-delay:0.12s">
+            <polygon points="0,0 36,-18 76,8 10,0" fill="#99e1d0" opacity="0.95"></polygon>
+          </g>
+          <!-- tail -->
+          <polygon points="140,60 170,48 160,70" fill="#7ad0bf" opacity="0.92"></polygon>
         </g>
-        <!-- wing right -->
-        <g class="wing" transform="translate(96,48)" style="animation-delay:0.12s">
-          <polygon points="0,0 36,-18 76,8 10,0" fill="#99e1d0" opacity="0.95"></polygon>
-        </g>
-        <!-- tail -->
-        <polygon points="140,60 170,48 160,70" fill="#7ad0bf" opacity="0.92"></polygon>
-      </g>
-  </svg>
+    </svg>
 
-  <script src="assets/js/theme.js"></script>
-  <script src="assets/js/birds.js"></script>
-  <script src="assets/js/interactions.js"></script>
-  <script src="assets/js/particles.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/birds.js"></script>
+    <script src="assets/js/interactions.js"></script>
+    <script src="assets/js/particles.js"></script>
 </body>
 
 </html>
