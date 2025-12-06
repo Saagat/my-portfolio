@@ -50,59 +50,6 @@ if (projectsGrid) {
     });
 }
 
-// Contact Form Placeholder Backend
-const contactForm = document.getElementById('contact-form');
-// Note: In some versions ID might be 'contact-form' on form or just in section. Checked Index.html:
-// Line 738: <form ... onsubmit="...">
-// It has no ID! line 737: <form class="mt-6 space-y-4 text-sm"
-// But line 1152 says: document.getElementById('contact-form').addEventListener...
-// So the original script was probably FAILING or I missed where ID was added.
-// Looking at file content Step 13, line 737: <form class="mt-6..." ...
-// It does NOT have id="contact-form".
-// However, I should ADD id="contact-form" to the HTML or select it by class.
-// The original script in Step 16 line 1152 referenced 'contact-form'.
-// I will assume I need to fix the HTML too.
-// For now, I'll use a safer selector in JS or just add the ID in HTML upgrade.
-// I'll make JS robust.
-if (!contactForm) {
-    const forms = document.querySelectorAll('form');
-    // iterate to find the one in contact section if needed, or just attach to the first one form in contact section
-    const contactSection = document.getElementById('contact');
-    if (contactSection) {
-        const form = contactSection.querySelector('form');
-        if (form) {
-            form.addEventListener('submit', function (e) {
-                e.preventDefault();
-                // Simulate sending
-                const btn = this.querySelector('button[type="submit"]');
-                const originalText = btn.innerText;
-                btn.innerText = 'Sending...';
-                btn.disabled = true;
-
-                setTimeout(() => {
-                    alert("Thank you for your message! I'll get back to you soon.");
-                    // this.reset();
-                    form.reset();
-                    btn.innerText = originalText;
-                    btn.disabled = false;
-                }, 1000);
-            });
-        }
-    }
-} else {
-    contactForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-        // Simulate sending
-        const btn = this.querySelector('button[type="submit"]');
-        const originalText = btn.innerText;
-        btn.innerText = 'Sending...';
-        btn.disabled = true;
-
-        setTimeout(() => {
-            alert("Thank you for your message! I'll get back to you soon.");
-            this.reset();
-            btn.innerText = originalText;
-            btn.disabled = false;
-        }, 1000);
-    });
-}
+// Contact Form Placeholder Backend Code REMOVED since we are using Formsubmit.co directly in HTML
+// The original code here prevented the form from submitting and showed an alert.
+// We now rely on standard HTML <form action="..."> submission.

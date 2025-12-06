@@ -479,8 +479,13 @@
             reply within 24–48 hours.
           </p>
 
-          <form class="mt-6 space-y-4 text-sm"
-            onsubmit="event.preventDefault(); alert('Form submit placeholder – yahan apna backend/email integrate karo.');">
+          <form class="mt-6 space-y-4 text-sm" action="https://formsubmit.co/INSERT_YOUR_EMAIL_HERE" method="POST">
+            <!-- Formsubmit.co Configuration -->
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="http://localhost:3000/portfolio/Index.html?success=true">
+            <input type="hidden" name="_subject" value="New Portfolio Contact">
+            <!-- End Configuration -->
+
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <input type="text" name="name" required placeholder="Your Name"
                 class="w-full rounded-lg border px-3 py-2 text-xs focus:outline-none focus:ring-1 focus:ring-gray-900 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:focus:ring-gray-600" />
