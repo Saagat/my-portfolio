@@ -477,11 +477,12 @@
             reply within 24–48 hours.
           </p>
 
-          <form id="contact-form" class="mt-6 space-y-4 text-sm"
-            action="https://formsubmit.co/ajax/32610969a58ea1897f95cd35adbba956" method="POST">
-            <!-- Formsubmit.co Configuration -->
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_subject" value="New Portfolio Contact">
+          <form id="contact-form" class="mt-6 space-y-4 text-sm" action="https://api.web3forms.com/submit"
+            method="POST">
+            <!-- Web3Forms Configuration -->
+            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+            <input type="hidden" name="subject" value="New Portfolio Contact">
+            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
             <!-- End Configuration -->
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
