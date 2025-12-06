@@ -474,74 +474,89 @@
           <h2 class="text-base font-semibold text-gray-800 dark:text-white">
             Let’s Work Together
           </h2>
-          <input type="email" name="email" required placeholder="Email"
-            class="w-full rounded-lg border px-3 py-2 text-xs focus:outline-none focus:ring-1 focus:ring-gray-900 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:focus:ring-gray-600" />
-        </div>
-        <input type="text" name="subject" placeholder="Project / Subject"
-          class="w-full rounded-lg border px-3 py-2 text-xs focus:outline-none focus:ring-1 focus:ring-gray-900 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:focus:ring-gray-600" />
-        <textarea name="message" rows="5" required
-          placeholder="Tell me about the project, goals, scope, and timeline..."
-          class="w-full rounded-lg border px-3 py-2 text-xs focus:outline-none focus:ring-1 focus:ring-gray-900 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:focus:ring-gray-600"></textarea>
-        <button type="submit"
-          class="rounded-full bg-gray-900 text-white text-xs px-5 py-2 font-medium hover:bg-gray-800 dark:bg-emerald-600 dark:hover:bg-emerald-700 transition-all duration-300">
-          Send Message
-        </button>
-        <p id="form-status" class="hidden text-xs font-medium mt-2"></p>
-        </form>
-      </div>
+          <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 max-w-md">
+            Tell me about your product, timeline and budget. I usually
+            reply within 24–48 hours.
+          </p>
 
-      <!-- CONTACT INFO -->
-      <aside
-        class="rounded-2xl border bg-gray-50 p-5 text-xs text-gray-600 space-y-3 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400">
-        <div>
-          <span class="text-base font-semibold text-gray-800 dark:text-white">Availability For Project's </span>
-        </div>
-        <div>
-          <p>Location: Mumbai • Remote • IST • PAN</p>
-          <p class="mt-1">
-            Available For Full Time Work:
-            <span class="font-semibold text-emerald-600">
-              Immediately Available
-            </span>
-          </p>
-          <p class="mt-1">
-            Freelance:
-            <span class="font-semibold text-emerald-600">
-              Open
-            </span>
-            (10–20 hrs / week)
-          </p>
-          <p>
-            Ready for short sprints, design audits, and MVP builds.
-          </p>
-        </div>
-        <div>
-          <p class="text-[11px] font-semibold text-gray-500 uppercase dark:text-gray-400">
-            Social
-          </p>
-          <div class="mt-2 flex flex-wrap gap-2">
-            <a href="https://www.behance.net/artworks_N" target="_blank"
-              class="rounded-full border px-3 py-1 text-[11px] hover:bg-gray-900 hover:text-white dark:border-gray-600 dark:hover:bg-gray-700">
-              Behance
-            </a>
-            <a href="https://dribbble.com/Navnath_S" target="_blank"
-              class="rounded-full border px-3 py-1 text-[11px] hover:bg-gray-900 hover:text-white dark:border-gray-600 dark:hover:bg-gray-700">
-              Dribbble
-            </a>
+          <form id="contact-form" class="mt-6 space-y-4 text-sm"
+            action="https://formsubmit.co/32610969a58ea1897f95cd35adbba956" method="POST">
+            <!-- Formsubmit.co Configuration -->
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_subject" value="New Portfolio Contact">
+            <!-- End Configuration -->
 
-            <a href="https://www.linkedin.com/in/s007navrathart/" target="_blank"
-              class="rounded-full border px-3 py-1 text-[11px] hover:bg-gray-900 hover:text-white dark:border-gray-600 dark:hover:bg-gray-700">
-              LinkedIn
-            </a>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <input type="text" name="name" required placeholder="Your Name"
+                class="w-full rounded-lg border px-3 py-2 text-xs focus:outline-none focus:ring-1 focus:ring-gray-900 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:focus:ring-gray-600" />
+              <input type="email" name="email" required placeholder="Email"
+                class="w-full rounded-lg border px-3 py-2 text-xs focus:outline-none focus:ring-1 focus:ring-gray-900 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:focus:ring-gray-600" />
+            </div>
+            <input type="text" name="subject" placeholder="Project / Subject"
+              class="w-full rounded-lg border px-3 py-2 text-xs focus:outline-none focus:ring-1 focus:ring-gray-900 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:focus:ring-gray-600" />
+            <textarea name="message" rows="5" required
+              placeholder="Tell me about the project, goals, scope, and timeline..."
+              class="w-full rounded-lg border px-3 py-2 text-xs focus:outline-none focus:ring-1 focus:ring-gray-900 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:focus:ring-gray-600"></textarea>
+            <button type="submit"
+              class="rounded-full bg-gray-900 text-white text-xs px-5 py-2 font-medium hover:bg-gray-800 dark:bg-emerald-600 dark:hover:bg-emerald-700 transition-all duration-300">
+              Send Message
+            </button>
+            <p id="form-status" class="hidden text-xs font-medium mt-2"></p>
+          </form>
+        </div>
 
-            <a href="https://www.instagram.com/inkbysn.28/" target="_blank"
-              class="rounded-full border px-3 py-1 text-[11px] hover:bg-gray-900 hover:text-white dark:border-gray-600 dark:hover:bg-gray-700">
-              Instagram
-            </a>
+        <!-- CONTACT INFO -->
+        <aside
+          class="rounded-2xl border bg-gray-50 p-5 text-xs text-gray-600 space-y-3 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400">
+          <div>
+            <span class="text-base font-semibold text-gray-800 dark:text-white">Availability For Project's </span>
           </div>
-        </div>
-      </aside>
-    </div>
+          <div>
+            <p>Location: Mumbai • Remote • IST • PAN</p>
+            <p class="mt-1">
+              Available For Full Time Work:
+              <span class="font-semibold text-emerald-600">
+                Immediately Available
+              </span>
+            </p>
+            <p class="mt-1">
+              Freelance:
+              <span class="font-semibold text-emerald-600">
+                Open
+              </span>
+              (10–20 hrs / week)
+            </p>
+            <p>
+              Ready for short sprints, design audits, and MVP builds.
+            </p>
+          </div>
+          <div>
+            <p class="text-[11px] font-semibold text-gray-500 uppercase dark:text-gray-400">
+              Social
+            </p>
+            <div class="mt-2 flex flex-wrap gap-2">
+              <a href="https://www.behance.net/artworks_N" target="_blank"
+                class="rounded-full border px-3 py-1 text-[11px] hover:bg-gray-900 hover:text-white dark:border-gray-600 dark:hover:bg-gray-700">
+                Behance
+              </a>
+              <a href="https://dribbble.com/Navnath_S" target="_blank"
+                class="rounded-full border px-3 py-1 text-[11px] hover:bg-gray-900 hover:text-white dark:border-gray-600 dark:hover:bg-gray-700">
+                Dribbble
+              </a>
+
+              <a href="https://www.linkedin.com/in/s007navrathart/" target="_blank"
+                class="rounded-full border px-3 py-1 text-[11px] hover:bg-gray-900 hover:text-white dark:border-gray-600 dark:hover:bg-gray-700">
+                LinkedIn
+              </a>
+
+              <a href="https://www.instagram.com/inkbysn.28/" target="_blank"
+                class="rounded-full border px-3 py-1 text-[11px] hover:bg-gray-900 hover:text-white dark:border-gray-600 dark:hover:bg-gray-700">
+                Instagram
+              </a>
+            </div>
+          </div>
+        </aside>
+      </div>
     </div>
   </section>
 
