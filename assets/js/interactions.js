@@ -85,7 +85,9 @@ if (contactForm) {
                 } else {
                     // Error from server
                     return response.json().then(data => {
-                        if (Object.hasOwn(data, 'errors')) {
+                        if (data.message) {
+                            formStatus.innerText = data.message;
+                        } else if (Object.hasOwn(data, 'errors')) {
                             formStatus.innerText = data["errors"].map(error => error["message"]).join(", ");
                         } else {
                             formStatus.innerText = "Oops! Look like there was a problem.";
