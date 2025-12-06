@@ -479,10 +479,10 @@
             reply within 24–48 hours.
           </p>
 
-          <form class="mt-6 space-y-4 text-sm" action="https://formsubmit.co/sagarnavnath93@gmail.com" method="POST">
+          <form id="contact-form" class="mt-6 space-y-4 text-sm" action="https://formsubmit.co/sagarnavnath93@gmail.com"
+            method="POST">
             <!-- Formsubmit.co Configuration -->
             <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_next" value="http://localhost:3000/portfolio/index.html?success=true">
             <input type="hidden" name="_subject" value="New Portfolio Contact">
             <!-- End Configuration -->
 
@@ -498,9 +498,10 @@
               placeholder="Tell me about the project, goals, scope, and timeline..."
               class="w-full rounded-lg border px-3 py-2 text-xs focus:outline-none focus:ring-1 focus:ring-gray-900 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:focus:ring-gray-600"></textarea>
             <button type="submit"
-              class="rounded-full bg-gray-900 text-white text-xs px-5 py-2 font-medium hover:bg-gray-800 dark:bg-emerald-600 dark:hover:bg-emerald-700">
+              class="rounded-full bg-gray-900 text-white text-xs px-5 py-2 font-medium hover:bg-gray-800 dark:bg-emerald-600 dark:hover:bg-emerald-700 transition-all duration-300">
               Send Message
             </button>
+            <p id="form-status" class="hidden text-xs font-medium mt-2"></p>
           </form>
         </div>
 

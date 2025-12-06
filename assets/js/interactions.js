@@ -50,6 +50,66 @@ if (projectsGrid) {
     });
 }
 
-// Contact Form Placeholder Backend Code REMOVED since we are using Formsubmit.co directly in HTML
-// The original code here prevented the form from submitting and showed an alert.
-// We now rely on standard HTML <form action="..."> submission.
+// Contact Form Handling (AJAX)
+const contactForm = document.getElementById('contact-form');
+const formStatus = document.getElementById('form-status');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const btn = contactForm.querySelector('button[type="submit"]');
+        const originalText = btn.innerText;
+
+        // 1. Show Loading State
+        btn.innerText = 'Sending...';
+        btn.disabled = true;
+
+        // 2. Collect Data
+        const formData = new FormData(contactForm);
+
+        // 3. Send via Fetch
+        fetch(contactForm.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+            .then(response => {
+                if (response.ok) {
+                    // Success
+                    formStatus.innerText = "Message sent successfully! I'll get back to you soon.";
+                    formStatus.className = "text-xs font-medium mt-2 text-emerald-600";
+                    contactForm.reset();
+                } else {
+                    // Error from server
+                    return response.json().then(data => {
+                        if (Object.hasOwn(data, 'errors')) {
+                            formStatus.innerText = data["errors"].map(error => error["message"]).join(", ");
+                        } else {
+                            formStatus.innerText = "Oops! Look like there was a problem.";
+                        }
+                        formStatus.className = "text-xs font-medium mt-2 text-red-600";
+                    })
+                }
+            })
+            .catch(error => {
+                // Network Error
+                formStatus.innerText = "Oops! There was a problem submitting your form.";
+                formStatus.className = "text-xs font-medium mt-2 text-red-600";
+            })
+            .finally(() => {
+                // 4. Reset Button
+                formStatus.classList.remove('hidden');
+                btn.innerText = originalText;
+                btn.disabled = false;
+
+                // Hide status after 5 seconds
+                setTimeout(() => {
+                    formStatus.classList.add('hidden');
+                    formStatus.innerText = '';
+                }, 5000);
+            });
+    });
+}
