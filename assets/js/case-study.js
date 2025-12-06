@@ -202,6 +202,7 @@ if (projectId && projectsData[projectId]) {
     // Gallery
     const galleryContainer = document.getElementById('cs-gallery');
     if (galleryContainer) {
+        galleryContainer.innerHTML = ''; // Clear existing static/fallback content
         data.gallery.forEach(imgSrc => {
             const div = document.createElement('div');
             div.className = 'rounded-xl overflow-hidden shadow-sm bg-gray-100 dark:bg-gray-800';
