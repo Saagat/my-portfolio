@@ -11,13 +11,46 @@
       darkMode: 'class',
     }
   </script>
+  <style>
+    /* Hardcoded Critical CSS */
+    html,
+    body {
+      background-color: #f9fafb;
+      color: #111827;
+    }
+
+    html.dark,
+    html.dark body {
+      background-color: #111827 !important;
+      color: #f3f4f6 !important;
+    }
+
+    .preload * {
+      transition: none !important;
+    }
+  </style>
+  <script>
+    // FOUC Fix
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      setTimeout(() => {
+        document.body.classList.remove("preload");
+      }, 200);
+    });
+  </script>
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/security.css">
   <script src="assets/js/security.js"></script>
 
 </head>
 
-<body class="bg-gray-50 text-gray-900 antialiased dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+<body
+  class="preload bg-gray-50 text-gray-900 antialiased dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300 overflow-x-hidden">
   <!-- Particles Canvas -->
   <canvas id="particles-canvas" class="fixed inset-0 z-30 pointer-events-none"></canvas>
   <header
